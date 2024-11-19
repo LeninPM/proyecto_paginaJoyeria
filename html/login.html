@@ -16,115 +16,108 @@
 </head>
 
 <body>
-    
-    <header>
-      <nav class="container">
-        <div class="logo">
-          <img src="../img/Productos/LOGRO NEGRO.png" alt="Logo" width="150px" height="auto">
-        </div>
-        <ul class="nav-links">
-          <li><a href="../html/index.html">Inicio</a></li>
-          <li><a class="nav-link" href="tendencias.html">Tendencia <i class="fa-solid fa-fire"></i></a></li>
-          <li class="dropdown">
-            <a href="#categories">Productos</a>
-            <div class="dropdown-content">
-              <a href="#necklaces">Collares</a>
-              <a href="#rings">Anillos</a>
-              <a href="#earrings">Aretes</a>
-              <a href="#bracelets">Brazaletes</a>
-            </div>
-          </li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="contacto.html">Contáctanos</a></li>
-          <li><a href="ubicanos.html">Ubícanos</a></li>
-        </ul>
-      </nav>
-    </header>
+  <header>
+    <nav class="container">
+      <div class="logo">
+        <img src="../img/logos/logo_dorado.png" alt="Logo" width="150px" height="auto">
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a class="nav-link" href="tendencias.html">Tendencia <i class="fa-solid fa-fire"></i></a></li>
+        <li class="dropdown">
+          <a href="#categories">Productos</a>
+          <div class="dropdown-content">
+            <a href="#necklaces">Collares</a>
+            <a href="#rings">Anillos</a>
+            <a href="#earrings">Aretes</a>
+            <a href="#bracelets">Brazaletes</a>
+          </div>
+        </li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contactanos.html">Contáctanos</a></li>
+        <li><a href="ubicanos.html">Ubícanos</a></li>
+      </ul>
+    </nav>
+  </header>
   <br>
-    <div class="container-form register">
-        <div class="information">
-            <div class="info-childs">
-                <h2>Bienvenido a la Joyeria Peeter </h2>
-                <p>Si no tiene una cuenta para iniciar sesion, pulse el boton registrar </p>
-                <img src="../img/tienda/joy.jpeg" class="ing" alt="">  
-                <br> <br>
-                
+  <div class="container-form register">
+    <div class="information">
+      <div class="info-childs">
+        <h2>Bienvenido a la Joyeria Peeter </h2>
+        <p>Si no tiene una cuenta para iniciar sesion, pulse el boton registrar </p>
+        <img src="../img/tienda/joy.jpeg" class="ing" alt="">
+        <br> <br>
 
-                <input type="button" value="Registrarse" id="regis" onclick="window.location.href='registarse.html'">
-                
+        <input type="button" value="Registrarse" id="regis" onclick="window.location.href='registarse.html'">
 
-
-            </div>
-        </div>
-        <div class="form-information">
-            <div class="form-information-childs">
-                <h2>Introduzca su cuenta</h2>
-                
-                   
-                <form class="form form-register" novalidate>
-                    <div>
-                        <label >
-                            <i class='bx bx-envelope' ></i>
-                            <input type="email" placeholder="Correo Electronico" name="userEmail" >
-                        </label>
-                    </div>
-                   <div>
-                        <label>
-                            <i class='bx bx-lock-alt' ></i>
-                            <input type="password" placeholder="Contraseña" name="userPassword">
-                        </label>
-                   </div>
-                   
-                    <input type="submit" value="Iniciar Sesión">
-                    <div class="alerta-error">Todos los campos son obligatorios</div>
-                    <div class="alerta-exito">Te registraste correctamente</div>
-                </form>
-            </div>
-        </div>
+      </div>
     </div>
+    <div class="form-information">
+      <div class="form-information-childs">
+        <h2>Introduzca su cuenta</h2>
 
-   
-<script>
-      document.getElementById('regis').onclick=function(){
-      window.location.href = 'registarse.html';
+        <form class="form form-register" novalidate>
+          <div>
+            <label>
+              <i class='bx bx-envelope'></i>
+              <input type="email" placeholder="Correo Electronico" name="userEmail">
+            </label>
+          </div>
+          <div>
+            <label>
+              <i class='bx bx-lock-alt'></i>
+              <input type="password" placeholder="Contraseña" name="userPassword">
+            </label>
+          </div>
+
+          <input type="submit" value="Iniciar Sesión">
+          <div class="alerta-error">Todos los campos son obligatorios</div>
+          <div class="alerta-exito">Te registraste correctamente</div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('regis').onclick = function () {
+      window.location.href = 'registrarse.html';
     };
-    </script>
-     <script src="js/script.js"></script>
-     <script src="js/register.js"></script>
-     <script src="js/login.js"></script>
+  </script>
+  <script src="../js/registrarse.js"></script>
+  <script src="../js/login.js"></script>
 
-     <footer>
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h3>Joyeria Peeter</h3>
-            <img src="../img/Productos/logopeeterblanco.jpeg" alt="Logo Footer" width="30%"></p>
-          </div>
-          <div class="footer-section">
-            <h3>Información</h3>
-            <ul>
-              <li><a href="#about">Sobre Nosotros</a></li>
-              <li><a href="#contact">Contactanos</a></li>
-              <li><a href="#shipping">Nuestro Taller</a></li>
-              <li><a href="#returns">Cuidado de Joyas</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h3>Connect With Us</h3>
-            <div class="social-icons">
-              <a href="https://www.facebook.com/?locale=es_LA" target="_blank" aria-label="Facebook"><i
-                  class="fa-brands fa-facebook"></i></a>
-              <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-              <a href="https://web.whatsapp.com/" target="_blank" aria-label="Whatsapp"><i
-                  class="fa-brands fa-whatsapp"></i></a>
-            </div>
-          </div>
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Joyeria Peeter</h3>
+          <img src="../img/Productos/logopeeterblanco.jpeg" alt="Logo Footer" width="30%"></p>
         </div>
-        <div class="footer-bottom">
-          <p>&copy; 2024 Joyeria Peeter. Todos los derechos reservados.</p>
+        <div class="footer-section">
+          <h3>Información</h3>
+          <ul>
+            <li><a href="nosotros.html">Sobre Nosotros</a></li>
+            <li><a href="#contact">Contactanos</a></li>
+            <li><a href="#shipping">Nuestro Taller</a></li>
+            <li><a href="#returns">Cuidado de Joyas</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/?locale=es_LA" target="_blank" aria-label="Facebook"><i
+                class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://web.whatsapp.com/" target="_blank" aria-label="Whatsapp"><i
+                class="fa-brands fa-whatsapp"></i></a>
+          </div>
         </div>
       </div>
-    </footer>
-
+      <div class="footer-bottom">
+        <p>&copy; 2024 Joyeria Peeter. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/login.js"></script>
 </body>
 </html>
