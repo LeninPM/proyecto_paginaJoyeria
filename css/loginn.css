@@ -231,6 +231,7 @@ info-childs input {
   position: absolute;
   transform: translateY(-300%);
 }
+
 .form div .alerta {
   width: 290px;
   text-align: left;
@@ -294,6 +295,8 @@ info-childs input {
       border-radius: 0 0 20px 20px;
   }
 }
+
+
 
 
 
@@ -393,4 +396,37 @@ footer {
   .footer-content {
     grid-template-columns: 1fr;
   }
+}
+
+
+.alerta-error,
+.alerta-exito {
+    display: none;
+    color: white;
+    background-color: red;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+.alerta-exito {
+    background-color: green;
+}
+.alerta-error, .alerta-exito {
+  display: none;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.alerta-error {
+  color: #fff;
+  background-color: #e74c3c;
+}
+
+.alerta-exito {
+  color: #fff;
+  background-color: #2ecc71;
 }

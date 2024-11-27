@@ -155,6 +155,10 @@ body {
     background-color: var(--primary-blue);
     color: var(--primary-gold);
     padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Asegura que el header esté sobre el contenido */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para el header */
   }
   
   nav {
@@ -168,25 +172,49 @@ body {
     font-weight: bold;
   }
   
-  .nav-links {
-    display: flex;
-    list-style: none;
-  }
-  
-  .nav-links li {
-    margin-left: 1.5rem;
-  }
-  
-  .nav-links a {
-    color: var(--primary-gold);
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    color: #fff;
-  }
-  
+  /* *************************Modificado avance 3--*/
+/* Menú de navegación */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin-left: auto;
+  transition: display 0.3s ease;
+  /* Animación para el menú */
+}
+
+.nav-links li {
+  margin-left: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--primary-gold);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+
+/* Avance 3--*/
+.menu-lineal {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--primary-gold);
+  cursor: pointer;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+}
+
+/* Al dar foco al botón */
+.menu-lineal:focus {
+  outline: none;
+}
+
   /* Dropdown Styles */
   .dropdown {
     position: relative;
@@ -215,43 +243,90 @@ body {
   .dropdown:hover .dropdown-content {
     display: block;
   }
-
-  .button-container {
-    position: fixed; /* Fija el contenedor en la pantalla */
-    top: 10px;       /* Ajusta la distancia desde el borde superior */
-    right: 10px;     /* Ajusta la distancia desde el borde derecho */
-    
-    display: flex;
-    background-color: #021526;
-    width: 250px;
-    height: 40px;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 10px;
+  
+  /* Carousel */
+  .carousel {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
   }
   
-  .button {
-    outline: 0 !important;
-    border: 0 !important;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: transparent;
+  .carousel-inner {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-item {
+    min-width: 100%;
+    height: 400px;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
-    transition: all ease-in-out 0.3s;
-    cursor: pointer;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
   }
   
-  .button:hover {
-    transform: translateY(-3px);
+  .carousel-control.prev {
+    left: 10px;
   }
   
-  .icon {
-    font-size: 20px;
+  .carousel-control.next {
+    right: 10px;
   }
+  
+
+  /*  */
+
+ .button-container {
+  position: fixed;
+  top: 23px;
+  right: 10px;      
+  
+  display: flex;
+  background-color: #021526;
+  width: 250px;
+  height: 40px;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+.button {
+  outline: 0 !important;
+  border: 0 !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.icon {
+  font-size: 20px;
+}
+
   
 
 
@@ -344,3 +419,80 @@ footer {
     
       }  
     }
+
+    /* LUPA */
+
+#search-container {
+  display: none; /* Oculto por defecto */
+  position: absolute;
+  top: 60px; /* Ajusta según tu diseño */
+  right: 20px; /* Ajusta según tu diseño */
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 1000;
+  width: 300px;
+}
+
+#search-container.active {
+  display: block; /* Muestra el contenedor cuando está activo */
+}
+
+#search-container input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#search-container button {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  background-color: #021526;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#search-container button:hover {
+  background-color: #014070;
+}
+
+/* Carrito */
+
+#cart-container {
+  position: fixed;
+  top: 20%;
+  right: 20px;
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  border-radius: 8px;
+  display: none;
+  z-index: 1000;
+}
+
+#cart-container h3 {
+  margin-top: 0;
+}
+
+#cart-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+#cart-container ul li {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.cart-hidden {
+  display: none;
+}

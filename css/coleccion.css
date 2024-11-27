@@ -28,7 +28,15 @@ header {
   color: var(--primary-gold);
   padding: 1rem 0;
   text-align: center;
-  padding: 20px 0;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Asegura que el header esté sobre el contenido */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para el header */
+  /***********************************avance3--*/
+  transition: padding 0.3s ease;
+  /* Animación suave para el cambio de altura */
+  /*--avance3*************************************/
 }
 
 nav {
@@ -41,10 +49,14 @@ nav {
   font-size: 1.5rem;
   font-weight: bold;
 }
-
+/* *************************Modificado avance 3--*/
+/* Menú de navegación */
 .nav-links {
   display: flex;
   list-style: none;
+  margin-left: auto;
+  transition: display 0.3s ease;
+  /* Animación para el menú */
 }
 
 .nav-links li {
@@ -60,6 +72,29 @@ nav {
 .nav-links a:hover {
   color: #fff;
 }
+
+
+/* Avance 3--*/
+.menu-lineal {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--primary-gold);
+  cursor: pointer;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+}
+
+/* Al dar foco al botón */
+.menu-lineal:focus {
+  outline: none;
+}
+
+/*--Modificado avance 3*/
+/* --Avance 3***********************************/
+
 
 /* Dropdown Styles */
 .dropdown {
@@ -190,6 +225,297 @@ footer {
   text-align: justify;
 }
 
+
+ /*  */
+
+ .button-container {
+  position: fixed;
+  top: 23px;
+  right: 10px;      
+  
+  display: flex;
+  background-color: #021526;
+  width: 250px;
+  height: 40px;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+.button {
+  outline: 0 !important;
+  border: 0 !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.icon {
+  font-size: 20px;
+}
+
+
+@media (max-width: 768px) {
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card p {
+    font-size: 2vw;
+    /* El texto se adapta dinámicamente al 
+   ancho de la ventana. El tamaño del texto dentro de los párrafos 
+   ahora utiliza 4vw (viewport width), 
+   lo que significa que el tamaño del texto será el 4% 
+   del ancho de la ventana. Esto lo hace más pequeño en pantallas 
+   pequeñas y más adaptable.*/
+  }
+}
+
+/* ***********************************************Modificado avance 3--*/
+@media (max-width: 600px) {
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    /* Centra todos los elementos dentro del nav */
+  }
+
+  /* Esconder el menú por defecto */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--primary-blue);
+    /* Fondo de menú */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    z-index: 10; /* Asegura que el menú esté por encima de otros elementos */
+  }
+
+  /* Mostrar el menú cuando se agregue la clase 'active' */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 0.5rem 0;
+    /* Espaciado entre los elementos */
+    text-align: center;
+    /* Centrado de los elementos */
+  }
+
+  .nav-links a {
+    color: #fff;
+  }
+
+  /* Expande el header cuando el menú se despliega */
+  header.expanded {
+    padding: 2rem 0;
+    /* Aumenta la altura del header cuando el menú se muestra */
+  }
+
+  /* Mostrar el botón hamburguesa */
+  .menu-lineal {
+    display: block;
+  }
+
+}
+
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    /* Cambia a columna en pantallas más pequeñas */
+    text-align: center;
+    /* Asegura que el texto quede centrado */
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+/* ***********************************************Modificado avance 3--*/
+
+@media (max-width: 480px) {
+  .button-container {
+    flex-direction: column;
+    /* Cambia la dirección a vertical */
+    right: 5px;
+    /* Ajusta el margen derecho */
+    top: 5px;
+    /* Ajusta el margen superior */
+    width: auto;
+    /* Elimina la restricción de ancho fijo */
+    height: auto;
+    /* Elimina la restricción de altura fija */
+  }
+
+  .button {
+    margin: 5px 0;
+    /* Añade margen entre los botones en disposición vertical */
+    width: 30px;
+    /* Reduce el tamaño de los botones */
+    height: 30px;
+  }
+
+  .icon {
+    font-size: 16px;
+    /* Reduce el tamaño de los íconos */
+  }
+}
+/* LUPA */
+
+#search-container {
+  display: none; /* Oculto por defecto */
+  position: absolute;
+  top: 60px; /* Ajusta según tu diseño */
+  right: 20px; /* Ajusta según tu diseño */
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 1000;
+  width: 300px;
+}
+
+#search-container.active {
+  display: block; /* Muestra el contenedor cuando está activo */
+}
+
+#search-container input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#search-container button {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  background-color: #021526;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#search-container button:hover {
+  background-color: #014070;
+}
+
+/* Carrito */
+
+#cart-container {
+  position: fixed;
+  top: 20%;
+  right: 20px;
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  border-radius: 8px;
+  display: none;
+  z-index: 1000;
+}
+
+#cart-container h3 {
+  margin-top: 0;
+}
+
+#cart-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+#cart-container ul li {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.cart-hidden {
+  display: none;
+}
+
+/*Flex-anillo*/
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 80px;
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  flex: 1 1 250px;
+  max-width: 300px;
+  min-width: 250px;
+  font-size: 1.1rem;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card h3 {
+  padding: 13px;
+  background-color: var(--primary-blue); /*cambio de color de letra*/
+  color: white;
+  text-align: center;
+}
+
+.card p {
+  padding: 15px;
+  text-align: justify;
+}
+/*Filtro estilos*/
+.filtros {
+  color: var(--primary-blue);
+  padding: 1rem 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tipo-opciones{
+  color: var(--primary-blue);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3)
+}
+
+#price-range {
+  width: 200px;
+}
+/*Filtro estilos*/
 @media (max-width: 768px) {
   .gallery {
     flex-direction: column;

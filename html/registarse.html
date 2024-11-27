@@ -17,7 +17,6 @@
 </head>
 
 <body>
-    
   <header>
     <nav class="container">
       <div class="logo"> <img src="../img/logos/logo_dorado.png" alt="Logo" width="150px" height="auto"></div>
@@ -80,56 +79,64 @@
       </svg>
     </button>
   </div>
-  <br>
-    <div class="container-form register">
-        <div class="information">
-            <div class="info-childs">
-                <h2>Bienvenido a la Joyeria Peeter </h2>
-                <p>Si no tiene una cuenta para iniciar sesion, pulse el boton registrar </p>
-                <img src="../img/tienda/joy.jpeg" class="ing" alt="">  
-                <br> <br>
-                
 
-                <input type="button" value="Registrarse" id="regis" onclick="window.location.href='registarse.html'">
-                
+<br>
 
-
-            </div>
-        </div>
-        <div class="form-information">
-            <div class="form-information-childs">
-                <h2>Introduzca su cuenta</h2>
-                
-                   
-                <form class="form form-register" novalidate>
-                    <div>
-                        <label >
-                            <i class='bx bx-envelope' ></i>
-                            <input type="email" placeholder="Correo Electronico" name="userEmail" >
-                        </label>
-                    </div>
-                   <div>
-                        <label>
-                            <i class='bx bx-lock-alt' ></i>
-                            <input type="password" placeholder="Contraseña" name="userPassword">
-                        </label>
-                   </div>
-                   
-                    <input type="submit" value="Iniciar Sesión">
-                    <div class="alerta-error">Todos los campos son obligatorios</div>
-                    <div class="alerta-exito">Te registraste correctamente</div>
-                </form>
-            </div>
-        </div>
+  <div class="container-form register">
+    <div class="information">
+      <div class="info-childs">
+        <h2>Bienvenido</h2>
+        <p>Para unirte a nuestra comunidad por favor Inicia Sesión con tus datos</p>
+        <img src="../img/tienda/as.jpg" class="ing" alt="Imagen de bienvenida">
+        <br><br>
+        <input type="button" value="Iniciar Sesion" id="regis" onclick="window.location.href='login.html'">
+      </div>
     </div>
+    <div class="form-information">
+      <div class="form-information-childs">
+        <right>
+        <h2>Crear una Cuenta</h2>
+        <form class="form form-register" novalidate>
+          <div>
+            <label>
+              <i class='bx bx-user'></i>
+              <input type="text" placeholder="Nombre" name="userName" aria-label="Nombre" required>
+            </label>
+          </div>
+          <div>
+            <label>
+              <i class='bx bx-user'></i>
+              <input type="text" placeholder="Apellido" name="userLastName" aria-label="Apellido" required>
+            </label>
+          </div>
+          <div>
+            <label>
+              <i class='bx bx-id-card'></i>
+              <input type="text" placeholder="DNI" name="userDNI" aria-label="DNI" required>
+            </label>
+          </div>
+          <div>
+            <label>
+              <i class='bx bx-envelope'></i>
+              <input type="email" placeholder="Correo Electrónico" name="userEmail" aria-label="Correo Electrónico" required>
+            </label>
+          </div>
+          <div>
+            <label>
+              <i class='bx bx-lock-alt'></i>
+              <input type="password" placeholder="Contraseña" name="userPassword" aria-label="Contraseña" required>
+            </label>
+          </div>
+          <input type="submit" value="Registrarse">
+          <div class="alerta-error">Todos los campos son obligatorios</div>
+          <div class="alerta-exito">Te registraste correctamente</div>
+        </form>
+      </div>
+    </div>
+  </div>
 
-   
-<script>
-      document.getElementById('regis').onclick=function(){
-      window.location.href = 'registarse.html';
-    };
-
-    // ****************************Mod avance 3
+  <script>
+// ****************************Mod avance 3
     // Función para alternar la clase 'active' en el menú al hacer clic
     function toggleMenu() {
       const navLinks = document.querySelector(".nav-links");
@@ -157,43 +164,41 @@
         logo.addEventListener("click", goToHome); // Asocia la función al evento de clic
       }
     });
-    </script>
-     <script src="js/script.js"></script>
-     <script src="js/register.js"></script>
-     <script src="js/login.js"></script>
 
-     <footer>
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h3>Joyeria Peeter</h3>
-            <img src="../img/Productos/logopeeterblanco.jpeg" alt="Logo Footer" width="30%"></p>
-          </div>
-          <div class="footer-section">
-            <h3>Información</h3>
-            <ul>
-              <li><a href="nosotros.html">Sobre Nosotros</a></li>
-              <li><a href="contacto.html">Contactanos</a></li>
-              <li><a href="ubicanos.html">Nuestro Taller</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h3>Conecta con Nosotros</h3>
-            <div class="social-icons">
-              <a href="https://www.facebook.com/?locale=es_LA" target="_blank" aria-label="Facebook"><i
-                  class="fa-brands fa-facebook"></i></a>
-              <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i
-                  class="fa-brands fa-instagram"></i></a>
-              <a href="https://web.whatsapp.com/" target="_blank" aria-label="Whatsapp"><i
-                  class="fa-brands fa-whatsapp"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2024 Joyeria Peeter. Todos los derechos reservados.</p>
+  </script>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Joyeria Peeter</h3>
+        <img src="../img/Productos/logopeeterblanco.jpeg" alt="Logo Footer" width="30%"></p>
+      </div>
+      <div class="footer-section">
+        <h3>Información</h3>
+        <ul>
+          <li><a href="nosotros.html">Sobre Nosotros</a></li>
+          <li><a href="contacto.html">Contactanos</a></li>
+          <li><a href="ubicanos.html">Nuestro Taller</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Conecta con Nosotros</h3>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/?locale=es_LA" target="_blank" aria-label="Facebook"><i
+              class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i
+              class="fa-brands fa-instagram"></i></a>
+          <a href="https://web.whatsapp.com/" target="_blank" aria-label="Whatsapp"><i
+              class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
-    </footer>
-
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Joyeria Peeter. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
 </body>
+
 </html>

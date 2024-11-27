@@ -14,8 +14,9 @@
   <script src="carrito.js" type="text/javascript" href="../JS/carrito.js"></script>
   <link rel="stylesheet" type="text/css" href="../css/tendencias.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <script src="../html/JavaScript/index.js" defer></script>
 </head>
 
 
@@ -23,95 +24,148 @@
   <header>
     <nav class="container">
       <div class="logo"> <img src="../img/logos/logo_dorado.png" alt="Logo" width="150px" height="auto"></div>
+      <!--**********************************Modificado Avance 3-->
+      <button class="menu-lineal" aria-label="Toggle navigation" onclick="toggleMenu()">
+        ☰
+      </button>
+      <!--Modificado Avance 3***********************************-->
       <ul class="nav-links">
-        <li><a href="../html/index.html">Inicio</a></li>
-        <li><a class="nav-link" href="tendencias.html">Tendencia <i class="fa-solid fa-fire"></i></a></li>
+        <li><a href="../html/index.html" class="nav-enlace">Inicio</a></li>
+        <li><a href="../html/tendencias.html" class="nav-enlace">Tendencia <i class="fa-solid fa-fire"></i></a></li>
         <li class="dropdown">
-          <a href="#categories">Productos</a>
+          <a href="../html/productos.html" class="nav-enlace">Productos</a>
           <div class="dropdown-content">
-            <div class="dropdown-content">
-              <a href="../html/collares.html">Collares</a>
-              <a href="../html/anillos.html">Anillos</a>
-              <a href="../html/aretes.html">Aretes</a>
-              <a href="../html/brazaletes.html">Brazaletes</a>
-            </div>
+            <a href="../html/collares.html">Collares</a>
+            <a href="../html/anillos.html">Anillos</a>
+            <a href="../html/aretes.html">Aretes</a>
+            <a href="../html/brazaletes.html">Brazaletes</a>
           </div>
         </li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="contacto.html">Contáctanos</a></li>
-        <li><a href="ubicanos.html">Ubicanos</a></li>
       </ul>
     </nav>
   </header>
 
 
+
   <div class="button-container">
-    <button class="button">
-      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024" stroke-width="0" fill="currentColor" stroke="currentColor" class="icon">
-        <path d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.9 63.9 0 0 0-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0 0 18.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"></path>
+    <button class="button" data-action="goHome">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024" stroke-width="0"
+        fill="currentColor" stroke="currentColor" class="icon">
+        <path
+          d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.9 63.9 0 0 0-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0 0 18.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z">
+        </path>
       </svg>
     </button>
-    
-    <button class="button">
-      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" aria-hidden="true" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
+
+    <button class="button" data-action="search">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" aria-hidden="true" viewBox="0 0 24 24"
+        stroke-width="2" fill="none" stroke="currentColor" class="icon">
         <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linejoin="round" stroke-linecap="round"></path>
       </svg>
     </button>
-    
-    <button class="button">
-      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor" class="icon">
-        <path d="M12 2.5a5.5 5.5 0 0 1 3.096 10.047 9.005 9.005 0 0 1 5.9 8.181.75.75 0 1 1-1.499.044 7.5 7.5 0 0 0-14.993 0 .75.75 0 0 1-1.5-.045 9.005 9.005 0 0 1 5.9-8.18A5.5 5.5 0 0 1 12 2.5ZM8 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0Z"></path>
+    <div id="search-container"></div>
+
+    <button class="button" data-action="profile">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="0"
+        fill="currentColor" stroke="currentColor" class="icon">
+        <path
+          d="M12 2.5a5.5 5.5 0 0 1 3.096 10.047 9.005 9.005 0 0 1 5.9 8.181.75.75 0 1 1-1.499.044 7.5 7.5 0 0 0-14.993 0 .75.75 0 0 1-1.5-.045 9.005 9.005 0 0 1 5.9-8.18A5.5 5.5 0 0 1 12 2.5ZM8 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0Z">
+        </path>
       </svg>
-    </button>
-  
-    <button class="button">
-      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
+    </button>    
+
+    <button class="button" data-action="cart">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" stroke-linejoin="round" stroke-linecap="round"
+        viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
         <circle r="1" cy="21" cx="9"></circle>
         <circle r="1" cy="21" cx="20"></circle>
         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
       </svg>
     </button>
   </div>
-  
-    <body>
-        <iframe class="mapaubi" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.977667108306!2d-76.7702793!3d-11.9760471!2m3!1f0!2f0!3f0!3m2!1i1024!2i
+
+    <button class="button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" stroke-linejoin="round" stroke-linecap="round"
+        viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
+        <circle r="1" cy="21" cx="9"></circle>
+        <circle r="1" cy="21" cx="20"></circle>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+      </svg>
+    </button>
+  </div>
+
+  <section>
+    <iframe class="mapaubi" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.977667108306!2d-76.7702793!3d-11.9760471!2m3!1f0!2f0!3f0!3m2!1i1024!2i
     768!4f13.1!3m3!1m2!1s0x9105e95b4cfb1a49%3A0x6b2e8df9e342ee40!2sLas%20Palmeras%20332%2C%20Chaclacayo%2015472!5e0!3m2!1ses-419!2spe!4v1725943020699!5m2!1ses-419
     !2spe" width="1903" height="750" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade" title="mapa"></iframe>
-    </body>
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-          <div class="footer-content">
-            <div class="footer-section">
-              <h3>Joyeria Peeter</h3>
-              <img src="../img/Productos/logopeeterblanco.jpeg" alt="Logo Footer" width="30%"></p>
-            </div>
-            <div class="footer-section">
-              <h3>Información</h3>
-              <ul>
-                <li><a href="nosotros.html">Sobre Nosotros</a></li>
-                <li><a href="#contact">Contactanos</a></li>
-                <li><a href="#shipping">Nuestro Taller</a></li>
-                <li><a href="#returns">Cuidado de Joyas</a></li>
-              </ul>
-            </div>
-            <div class="footer-section">
-              <h3>Conecta con Nosotros</h3>
-              <div class="social-icons">
-                <a href="https://www.facebook.com/?locale=es_LA" target="_blank" aria-label="Facebook"><i
-                    class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://web.whatsapp.com/" target="_blank" aria-label="Whatsapp"><i
-                    class="fa-brands fa-whatsapp"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="footer-bottom">
-            <p>&copy; 2024 Joyeria Peeter. Todos los derechos reservados.</p>
+      referrerpolicy="no-referrer-when-downgrade" title="mapa"></iframe>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Joyeria Peeter</h3>
+          <img src="../img/Productos/logopeeterblanco.jpeg" alt="Logo Footer" width="30%"></p>
+        </div>
+        <div class="footer-section">
+          <h3>Información</h3>
+          <ul>
+            <li><a href="nosotros.html">Sobre Nosotros</a></li>
+            <li><a href="contacto.html">Contactanos</a></li>
+            <li><a href="ubicanos.html">Nuestro Taller</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Conecta con Nosotros</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/?locale=es_LA" target="_blank" aria-label="Facebook"><i
+                class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i
+                class="fa-brands fa-instagram"></i></a>
+            <a href="https://web.whatsapp.com/" target="_blank" aria-label="Whatsapp"><i
+                class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
-      </footer>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Joyeria Peeter. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!--*********************Modificado avance 3-->
+  <script>// Función para alternar la clase 'active' en el menú al hacer clic
+    function toggleMenu() {
+      const navLinks = document.querySelector(".nav-links");
+      const header = document.querySelector("header");
+      navLinks.classList.toggle("active"); // Alterna la visibilidad del menú
+
+      // Controla la altura del header dependiendo del estado del menú
+      if (navLinks.classList.contains("active")) {
+        header.classList.add("expanded"); // Aumenta la altura del header si el menú está activo
+      } else {
+        header.classList.remove("expanded"); // Restaura la altura original del header si el menú está oculto
+      }
+    }
+
+    // Función para redirigir al inicio al hacer clic en el logo
+    function goToHome() {
+      window.location.href = "index.html"; // Cambia "index.html" por la ruta de tu página de inicio si es diferente
+    }
+
+    // Añadir evento de clic al logo
+    document.addEventListener("DOMContentLoaded", () => {
+      const logo = document.querySelector(".logo img"); // Selecciona la imagen del logo
+      if (logo) {
+        logo.addEventListener("click", goToHome); // Asocia la función al evento de clic
+      }
+    });
+    
+  </script>
+  <!--Modificado avance 3******************************-->
+
+
 </body>
 
 </html>
