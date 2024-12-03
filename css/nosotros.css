@@ -11,20 +11,26 @@
 }
 
 body {
-    
+
   font-family: 'Lora', serif;
   line-height: 1.6;
   color: var(--primary-blue);
-  background-image: url("../img/Productos/collar_cruz4.jpeg"); /* La ruta de la imagen que quieres poner */
-  background-position: center; /* Centra la imagen en el fondo */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-size: cover; /* Ajusta la imagen para cubrir todo el área */
-  background-attachment: fixed; /* La imagen se queda fija al hacer scroll */
-  min-height: 100vh; /* Asegura que la imagen ocupe al menos el alto de la ventana */
+  background-image: url("../img/Productos/collar_cruz4.jpeg");
+  /* La ruta de la imagen que quieres poner */
+  background-position: center;
+  /* Centra la imagen en el fondo */
+  background-repeat: no-repeat;
+  /* Evita que la imagen se repita */
+  background-size: cover;
+  /* Ajusta la imagen para cubrir todo el área */
+  background-attachment: fixed;
+  /* La imagen se queda fija al hacer scroll */
+  min-height: 100vh;
+  /* Asegura que la imagen ocupe al menos el alto de la ventana */
 
 }
 
-a{
+a {
   text-decoration: none;
 }
 
@@ -42,8 +48,10 @@ header {
   padding: 1rem 0;
   position: sticky;
   top: 0;
-  z-index: 1000; /* Asegura que el header esté sobre el contenido */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para el header */
+  z-index: 1000;
+  /* Asegura que el header esté sobre el contenido */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Sombra para el header */
   /***********************************avance3--*/
   transition: padding 0.3s ease;
   /* Animación suave para el cambio de altura */
@@ -180,45 +188,102 @@ nav {
 
 /* Contenedor centrado */
 .contenedor {
-  position: relative;
-  
-   
-  width: 500px;
-   
-  margin: 50px auto; /* Centrado horizontal y margen superior */
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para el cuadro */
-  
-  text-align: center; /* Centrar texto y elementos */
+  padding: 5px;
+  outline: none;
+  width: 97%;
+  height: 750px;
+  margin: 15px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    "A1 A1 A5"
+    "A1 A1 A5"
+    "A2 A3 A5"
+    "A4 A4 A5"
+  ;
+  gap: 5px;
+  background: none;
+  border-radius: 5px;
 }
-.glow::before, .glow::after{
+
+.item {
+  font-size: 2rem;
+  color: #d4af37;
+  font-family: 'Lora', serif;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.item1 {
+  background-color: #ffffff;
+  opacity: .95;
+  font-family: 'Lora', serif;
+  grid-area: A1;
+}
+
+.item2 {
+  background-color: #021526;
+  opacity: .95;
+  font-family: 'Lora', serif;
+  grid-area: A2;
+}
+
+.item3 {
+  background-color: #021526;
+  opacity: .95;
+  font-family: 'Lora', serif;
+  grid-area: A3;
+}
+
+.item4 {
+  background-color: #021526;
+  opacity: .95;
+  font-family: 'Lora', serif;
+  grid-area: A4;
+}
+
+.item5 {
+  background-color: #021526;
+  opacity: .90;
+  font-family: 'Lora', serif;
+  grid-area: A5;
+}
+
+
+
+.glow::before,
+.glow::after {
   content: '';
   position: absolute;
-  
+
   left: -2px;
   top: -2px;
-  background: linear-gradient(45deg , #e6fb04,#ff6600,#00ff66,#00ffff,
-  #ff00ff, #ff0099,#6e0dd0,#ff3300,#099fff);
+  background: linear-gradient(45deg, #e6fb04, #ff6600, #00ff66, #00ffff,
+      #ff00ff, #ff0099, #6e0dd0, #ff3300, #099fff);
   background-size: 400%;
   width: calc(100% + 5px);
   height: calc(100% + 5px);
   z-index: -1;
   animation: animate 20s linear infinite;
 }
-@keyframes animate{
-  0%{
+
+@keyframes animate {
+  0% {
     background-position: 0 0;
 
   }
-  50%{
+
+  50% {
     background-position: 400% 0;
   }
-  100%{
+
+  100% {
     background-position: 0 0;
   }
 }
-.glow::after{
+
+.glow::after {
   filter: blur(40px);
 }
 
@@ -231,10 +296,38 @@ nav {
 
 /* Estilos para el párrafo */
 .parrafo {
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  text-align: justify;
+  line-height: 1, 6;
+  color: #0a0a0a;
+  margin-bottom: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+}
+
+.parrafo2 {
+  font-size: 1.2rem;
+  font-family: sans-serif;
   text-align: justify;
   line-height: 1.6;
-  color: #333;
-  margin-bottom: 30px;
+  color: #fff;
+  margin-bottom: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.parrafo3 {
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  text-align: justify;
+  line-height: 1, 6;
+  color: #fff;
+  margin-bottom: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+
 }
 
 /* Estilos para las imágenes */
@@ -295,7 +388,7 @@ footer {
   gap: 1rem;
 }
 
-.social-icons a {
+.social-icons {
   color: var(--primary-gold);
   font-size: 1.5rem;
   transition: color 0.3s ease;
@@ -317,8 +410,8 @@ footer {
 .button-container {
   position: fixed;
   top: 23px;
-  right: 10px;      
-  
+  right: 10px;
+
   display: flex;
   background-color: #021526;
   width: 250px;
@@ -376,7 +469,8 @@ footer {
     left: 0;
     width: 100%;
     padding: 1rem 0;
-    z-index: 10; /* Asegura que el menú esté por encima de otros elementos */
+    z-index: 10;
+    /* Asegura que el menú esté por encima de otros elementos */
   }
 
   /* Mostrar el menú cuando se agregue la clase 'active' */
@@ -416,8 +510,9 @@ footer {
   .social-icons {
     justify-content: center;
   }
-  
+
 }
+
 /* ***********************************************Modificado avance 3--*/
 
 
@@ -472,6 +567,7 @@ footer {
     width: 80%;
   }
 }
+
 @media (max-width: 480px) {
   .button-container {
     flex-direction: column;
@@ -498,15 +594,52 @@ footer {
     font-size: 16px;
     /* Reduce el tamaño de los íconos */
   }
+.item{
+  font-size: 1.5rem;
+}
+.item4{
+  display: none;
+}
+.item5{
+  display: none;
+}
+  .contenedor {
+    padding-bottom: 5px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+      "A1 A1"
+      "A2 A3"
+    ;
+    gap: 5px;
+    background: none;
+    border-radius: 5px;
+  }
+
+  .parrafo {
+    font-size: 1rem;
+  }
+
+  .parrafo2 {
+    font-size: 1rem;
+  }
+
+  .parrafo3 {
+    font-size: 1rem;
+  }
 }
 
 /* LUPA */
 
 #search-container {
-  display: none; /* Oculto por defecto */
+  display: none;
+  /* Oculto por defecto */
   position: absolute;
-  top: 60px; /* Ajusta según tu diseño */
-  right: 20px; /* Ajusta según tu diseño */
+  top: 60px;
+  /* Ajusta según tu diseño */
+  right: 20px;
+  /* Ajusta según tu diseño */
   background: white;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -517,7 +650,8 @@ footer {
 }
 
 #search-container.active {
-  display: block; /* Muestra el contenedor cuando está activo */
+  display: block;
+  /* Muestra el contenedor cuando está activo */
 }
 
 #search-container input {

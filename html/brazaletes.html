@@ -55,7 +55,7 @@
         <option value="ninguno">Ninguno</option>
     </select>
 
-    <label for="tipo" class="filtro-label">Precio:</label>
+    <label for="tipo" class="filtro-label">Precio: S/.</label>
     <input type="range" id="price-range" min="0" max="200" value="200" step="10" oninput="actualizarPrecio()">
         <span id="price-label">0 - 200</span>
   </div>
@@ -88,14 +88,21 @@
       </svg>
     </button>    
 
-    <button class="button" data-action="cart">
+    <button class="button" data-action="cart" id="cart-button">
       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" stroke-linejoin="round" stroke-linecap="round"
-        viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
+           viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
         <circle r="1" cy="21" cx="9"></circle>
         <circle r="1" cy="21" cx="20"></circle>
         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
       </svg>
     </button>
+    
+    <div class="cart-section" id="cart-section">
+      <ul class="cart-list" id="cart-items"></ul>
+      <div class="cart-total" id="cart-total"></div>
+      <button class="close-cart" id="close-cart">Cerrar</button>
+      <button class="buy-button" id="buy-button" disabled>Comprar</button>
+    </div>
   </div>
 
   <section class="galeria">
@@ -103,36 +110,43 @@
       <img src="../img/Productos/Mejorados/brazaletes/brazalete_marron.jpeg" alt="Imagen_anillo_arbol">
       <h3>Brazalete de piedra ojo de tigre con adornos de plata 950</h3>
       <p>S/. 75.00</p>
+      <button class="add-to-cart" data-name="Brazalete de piedra ojo de tigre con adornos de plata 950" data-price="75.00">Agregar al carrito</button>
     </div>
     <div class="card" data-tipo="piedra-natural" data-precio="175">
       <img src="../img/Productos/Mejorados/brazaletes/WhatsApp Image 2024-10-03 at 5.19.45 PM.jpeg" alt="Imagen_corazon_blanco">
       <h3>Grande brazalete de piedras de ojo de tigre con adornos de plata 950</h3>
       <p>S/. 175.00</p>
+      <button class="add-to-cart" data-name="Grande brazalete de piedras de ojo de tigre con adornos de plata 950" data-price="175.00">Agregar al carrito</button>
     </div>
     <div class="card" data-tipo="piedra-natural" data-precio="150">
       <img src="../img/Productos/Mejorados/brazaletes/WhatsApp Image 2024-10-03 at 5.19.47 PM (3).jpeg" alt="Imagen_corazon_rojo">
       <h3>Pulsera de plata 950 con diferentes tipos de piedras</h3>
       <p>S/. 150.00</p>
+      <button class="add-to-cart" data-name="Pulsera de plata 950 con diferentes tipos de piedras" data-price="150.00">Agregar al carrito</button>
     </div>
     <div class="card" data-tipo="piedra-natural" data-precio="150">
       <img src="../img/Productos/Mejorados/brazaletes/WhatsApp Image 2024-10-03 at 5.19.47 PM (4).jpeg" alt="Imagen_gota_avalon">
       <h3>Pulsera de plata 950 de huayruros</h3>
       <p>S/. 150.00</p>
+      <button class="add-to-cart" data-name="Pulsera de plata 950 de huayruros" data-price="150.00">Agregar al carrito</button>
     </div>
     <div class="card" data-tipo="piedra-natural" data-precio="120">
       <img src="../img/Productos/Mejorados/brazaletes/WhatsApp Image 2024-10-03 at 5.19.48 PM (1).jpeg" alt="Imagen_anillo_huairuro">
       <h3>Pulsera de perlas del río</h3>
       <p>S/. 120.00</p>
+      <button class="add-to-cart" data-name="Pulsera de perlas del río" data-price="120.00">Agregar al carrito</button>
     </div>
     <div class="card" data-tipo="piedra-natural" data-precio="130">
       <img src="../img/Productos/Mejorados/brazaletes/WhatsApp Image 2024-10-03 at 5.19.48 PM.jpeg" alt="Imagen_anillo_huairuro">
       <h3>Brazalete de plata con piedra lapislázuli</h3>
       <p>S/. 130.00</p>
+      <button class="add-to-cart" data-name="Brazalete de plata con piedra lapislázuli" data-price="130.00">Agregar al carrito</button>
     </div>
     <div class="card" data-tipo="piedra-natural" data-precio="75">
       <img src="../img/Productos/Mejorados/brazaletes/WhatsApp Image 2024-10-03 at 5.19.51 PM.jpeg" alt="Imagen_anillo_nacar">
       <h3>Pulsera delgada de ojo de tigre con adornos de plata 950</h3>
       <p>S/. 75.00</p>
+      <button class="add-to-cart" data-name="Pulsera delgada de ojo de tigre con adornos de plata 950" data-price="75.00">Agregar al carrito</button>
     </div>
   </section>
   <script src="../html/JavaScript/filtros.js" type="text/javascript"></script>

@@ -76,14 +76,21 @@
       </svg>
     </button>    
 
-    <button class="button" data-action="cart">
+    <button class="button" data-action="cart" id="cart-button">
       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" stroke-linejoin="round" stroke-linecap="round"
-        viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
+           viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
         <circle r="1" cy="21" cx="9"></circle>
         <circle r="1" cy="21" cx="20"></circle>
         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
       </svg>
     </button>
+    
+    <div class="cart-section" id="cart-section">
+      <ul class="cart-list" id="cart-items"></ul>
+      <div class="cart-total" id="cart-total"></div>
+      <button class="close-cart" id="close-cart">Cerrar</button>
+      <button class="buy-button" id="buy-button" disabled>Comprar</button>
+    </div>
   </div>
 
   <div class="filtros">
@@ -97,9 +104,9 @@
         <option value="ninguno">Ninguno</option>
     </select>
 
-    <label for="tipo" class="filtro-label">Precio:</label>
-    <input type="range" id="price-range" min="0" max="200" value="200" step="10" oninput="actualizarPrecio()">
-        <span id="price-label">0 - 200</span>
+    <label for="tipo" class="filtro-label">Precio: S/.</label>
+    <input type="range" id="price-range" min="0" max="250" value="250" step="10" oninput="actualizarPrecio()">
+        <span id="price-label">0 - 250</span>
   </div>
 
   <section class="galeria">
@@ -107,61 +114,97 @@
       <img src="../img/Productos/Mejorados/Collares/collar_corazon.jpeg" alt="Imagen_collar_corazon">
       <h3>Relicario Corazón de Plata 950</h3>
       <p>S/. 160.00</p>
+      <button class="add-to-cart" data-name="Relicario Corazón de Plata 950" data-price="160.00">Agregar al carrito</button>
     </div>
     <div class="card" data-tipo="piedra-natural" data-precio="150">
       <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.50 PM (2).jpeg" alt="Imagen_corazon_rojo">
       <h3>Flor de Nacar de plata quemada 950</h3>
       <p>S/. 150.00</p>
+      <button class="add-to-cart" data-name="Flor de Nacar de plata quemada 950" data-price="150.00">Agregar al carrito</button>
     </div>
     <div class="card" data-tipo="cruz" data-precio="140">
       <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.51 PM (1).jpeg" alt="Imagen_gota_avalon">
       <h3>Cruz con Manto de plata 950</h3>
       <p>S/. 140.00</p>
+      <button class="add-to-cart" data-name="Cruz con Manto de plata 950" data-price="140.00">Agregar al carrito</button>
     </div>
     <div class="card" data-tipo="cruz" data-precio="200">
       <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.51 PM (2).jpeg" alt="Imagen_gota_nacar">
       <h3>Cruz Calatrava de plata 950</h3>
       <p>S/. 200.00</p>
+      <button class="add-to-cart" data-name="Cruz Calatrava de plata 950" data-price="200.00">Agregar al carrito</button>
     </div>
     <div class="card" data-tipo="cruz" data-precio="120">
       <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.51 PM (3).jpeg" alt="Imagen_anillo_huairuro">
       <h3>Cruz Templaria de plata 950</h3>
       <p>S/. 120.00</p>
+      <button class="add-to-cart" data-name="Cruz Templaria de plata 950" data-price="120.00">Agregar al carrito</button>
     </div>
     <div class="card" data-tipo="cruz" data-precio="110">
       <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.51 PM (4).jpeg" alt="Imagen_anillo_huairuro">
       <h3>Cruz Visigoda de plata 950</h3>
       <p>S/. 110.00</p>
+      <button class="add-to-cart" data-name="Cruz Visigoda de plata 950" data-price="110.00">Agregar al carrito</button>
     </div>
     <div class="card" data-tipo="cruz" data-precio="120">
       <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.52 PM (1).jpeg" alt="Imagen_anillo_nacar">
       <h3>Cruz Calatrava</h3>
       <p>S/. 120.00</p>
+      <button class="add-to-cart" data-name="Cruz Calatrava" data-price="120.00">Agregar al carrito</button>
     </div>
     <div class="card" data-tipo="sharovsky" data-precio="120">
       <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.52 PM (2).jpeg" alt="Imagen_anillo_piedra_azul_brillante">
       <h3>Charovsky Corazón</h3>
       <p>S/. 120.00</p>
+      <button class="add-to-cart" data-name="Charovsky Corazón" data-price="120.00">Agregar al carrito</button>
     </div>
     <div class="card" data-tipo="ninguno" data-precio="120">
       <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.52 PM (3).jpeg" alt="Imagen_anillo_piedraDorada">
       <h3>Corazón con Gravados</h3>
       <p>S/. 120.00</p>
+      <button class="add-to-cart" data-name="Corazón con Gravados" data-price="120.00">Agregar al carrito</button>
     </div>
     <div class="card" data-tipo="cruz" data-precio="130">
       <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.52 PM.jpeg" alt="Imagen_anillo_piedra_colores">
       <h3>Cruz</h3>
       <p>S/. 130.00</p>
+      <button class="add-to-cart" data-name="Cruz" data-price="130.00">Agregar al carrito</button>
     </div>
     <div class="card" data-tipo="circon" data-precio="110">
       <img src="../img/Productos/collar_candado.jpeg" alt="Imagen_anillo_piedra_colores">
       <h3>Candado de plata 925 con circones</h3>
       <p>S/. 110.00</p>
+      <button class="add-to-cart" data-name="Candado de plata 925 con circones" data-price="110.00">Agregar al carrito</button>
     </div>
     <div class="card" data-tipo="collar" data-precio="110">
       <img src="../img/Productos/collar_trescaidas_corazon1.jpeg" alt="Imagen_anillo_piedra_colores">
       <h3>Corazón de plata 925 con circones</h3>
       <p>S/. 110.00</p>
+      <button class="add-to-cart" data-name="Corazón de plata 925 con circones" data-price="110.00">Agregar al carrito</button>
+    </div>
+    <div class="card" data-tipo="collar" data-precio="100">
+      <img src="../img/Productos/Mejorados/collares/collarPalomas.jpg" alt="Imagen_anillo_piedra_colores">
+      <h3>Collar palomas corazon plata 950 con piedra charovsky negra</h3>
+      <p>S/. 100.00</p>
+      <button class="add-to-cart" data-name="Corazón de plata 925 con circones" data-price="110.00">Agregar al carrito</button>
+    </div>
+    <div class="card" data-tipo="collar" data-precio="100">
+      <img src="../img/Productos/Mejorados/collares/collarFlor.jpg" alt="Imagen_anillo_piedra_colores">
+      <h3>Collar de flor de plata 950 con piedra charovsky rosa</h3>
+      <p>S/. 100.00</p>
+      <button class="add-to-cart" data-name="Corazón de plata 925 con circones" data-price="110.00">Agregar al carrito</button>
+    </div>
+    <div class="card" data-tipo="collar" data-precio="180">
+      <img src="../img/Productos/Mejorados/collares/juegoPalomas.jpg" alt="Imagen_anillo_piedra_colores">
+      <h3>Juego de Palomas de plata 950 inlcluye collar y aretes con piedra charovsky</h3>
+      <p>S/. 180.00</p>
+      <button class="add-to-cart" data-name="Corazón de plata 925 con circones" data-price="110.00">Agregar al carrito</button>
+    </div>
+    <div class="card" data-tipo="collar" data-precio="250">
+      <img src="../img/Productos/Mejorados/collares/juego de turquesa.jpg" alt="juego de turquesa">
+      <h3>Juego de Turquesas con trabajo en filigrana de plata 950</h3>
+      <p>S/. 250.00</p>
+      <button class="add-to-cart" data-name="Corazón de plata 925 con circones" data-price="110.00">Agregar al carrito</button>
     </div>
   </section>
   <script src="../html/JavaScript/filtros.js" type="text/javascript"></script>

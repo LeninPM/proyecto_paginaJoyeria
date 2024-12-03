@@ -73,14 +73,21 @@
           </svg>
         </button>    
     
-        <button class="button" data-action="cart">
+        <button class="button" data-action="cart" id="cart-button">
           <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" stroke-linejoin="round" stroke-linecap="round"
-            viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
+               viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
             <circle r="1" cy="21" cx="9"></circle>
             <circle r="1" cy="21" cx="20"></circle>
             <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
           </svg>
         </button>
+        
+        <div class="cart-section" id="cart-section">
+          <ul class="cart-list" id="cart-items"></ul>
+          <div class="cart-total" id="cart-total"></div>
+          <button class="close-cart" id="close-cart">Cerrar</button>
+          <button class="buy-button" id="buy-button" disabled>Comprar</button>
+        </div>
       </div>
 
     <div class="filtros">
@@ -93,252 +100,360 @@
             <option value="aretes">Aretes</option>
         </select>
     
-        <label for="tipo" class="filtro-label">Precio:</label>
-        <input type="range" id="price-range" min="0" max="200" value="200" step="10" oninput="actualizarPrecio()">
-            <span id="price-label">0 - 200</span>
+        <label for="tipo" class="filtro-label">Precio: S/.</label>
+        <input type="range" id="price-range" min="0" max="250" value="250" step="10" oninput="actualizarPrecio()">
+            <span id="price-label">0 - 250</span>
     </div>
 
     <section class="galeria">
-        <div class="card" data-tipo="anillo" data-precio="60">
-          <img src="../img/Productos/Mejorados/Anillos/anillo_arbol.jpeg" alt="Imagen_anillo_arbol">
-          <h3>Anillo Árbol de la vida de plata quemada 950</h3>
-          <p>S/. 60.00</p>
-        </div>
-        <div class="card" data-tipo="anillo" data-precio="110">
-          <img src="../img/Productos/Mejorados/Anillos/anillo_corazon_nacar.jpeg" alt="Imagen_corazon_blanco">
-          <h3>Anillo >Anillo de plata 950 Corazón de Nacar</h3>
-          <p>S/. 110.00</p>
-        </div>
-        <div class="card" data-tipo="anillo" data-precio="110">
-          <img src="../img/Productos/Mejorados/Anillos/anillo_corazon_rojo.jpeg" alt="Imagen_corazon_rojo">
-          <h3>Anillo de plata 950 Corazón Spondilus</h3>
-          <p>S/. 110.00</p>
-        </div>
-        <div class="card" data-tipo="anillo" data-precio="110">
-          <img src="../img/Productos/Mejorados/Anillos/anillo_avalon.jpeg" alt="Imagen_gota_avalon">
-          <h3>Anillo de plata 950 Gota Avalón</h3>
-          <p>S/. 110.00</p>
-        </div>
-        <div class="card" data-tipo="anillo" data-precio="110">
-          <img src="../img/Productos/Mejorados/Anillos/anillo_nacar.jpeg" alt="Imagen_gota_nacar">
-          <h3>Anillo de plata 950 Gota Avalón</h3>
-          <p>S/. 110.00</p>
-        </div>
-        <div class="card" data-tipo="anillo" data-precio="80">
-          <img src="../img/Productos/Mejorados/Anillos/anillo_huairuro.jpeg" alt="Imagen_anillo_huairuro">
-          <h3>Anillo de plata 950 de Huayruro</h3>
-          <p>S/. 80.00</p>
-        </div>
-        <div class="card" data-tipo="anillo" data-precio="45">
-          <img src="../img/Productos/Mejorados/Anillos/anillo_mariposa.jpeg" alt="Imagen_anillo_huairuro">
-          <h3>Anillo de plata 950 Mariposa</h3>
-          <p>S/. 45.00</p>
-        </div>
-        <div class="card" data-tipo="anillo" data-precio="90">
-          <img src="../img/Productos/Mejorados/Anillos/anillo_piedras_nacar.jpeg" alt="Imagen_anillo_nacar">
-          <h3>Anillo de plata 950 con Nacar</h3>
-          <p>S/. 90.00</p>
-        </div>
-        <div class="card" data-tipo="anillo" data-precio="90">
-          <img src="../img/Productos/Mejorados/Anillos/anillo_piedra_azul_brillante.jpeg" alt="Imagen_anillo_piedra_azul_brillante">
-          <h3>Anillo de plata 950 Aventurina Azul</h3>
-          <p>S/. 90.00</p>
-        </div>
-        <div class="card" data-tipo="anillo" data-precio="90">
-          <img src="../img/Productos/Mejorados/Anillos/anillo_piedra_dorada.jpeg" alt="Imagen_anillo_piedraDorada">
-          <h3>Anillo de plata 950 Aventurina Dorada</h3>
-          <p>S/. 90.00</p>
-        </div>
-        <div class="card" data-tipo="anillo" data-precio="90">
-          <img src="../img/Productos/Mejorados/Anillos/anillo_piedras_colores.jpeg" alt="Imagen_anillo_piedra_colores">
-          <h3>Anillo de plata 950 con piedras naturales</h3>
-          <p>S/. 90.00</p>
-        </div>
-        <div class="card" data-tipo="collar" data-precio="160">
-            <img src="../img/Productos/Mejorados/Collares/collar_corazon.jpeg" alt="Imagen_collar_corazon">
-            <h3>Relicario Corazón de Plata 950</h3>
-            <p>S/. 160.00</p>
-          </div>
-          <div class="card" data-tipo="collar" data-precio="150">
-            <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.50 PM (2).jpeg" alt="Imagen_corazon_rojo">
-            <h3>Flor de Nacar de plata quemada 950</h3>
-            <p>S/. 150.00</p>
-          </div>
-          <div class="card" data-tipo="collar" data-precio="140">
-            <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.51 PM (1).jpeg" alt="Imagen_gota_avalon">
-            <h3>Cruz con Manto de plata 950</h3>
-            <p>S/. 140.00</p>
-          </div>
-          <div class="card" data-tipo="collar" data-precio="200">
-            <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.51 PM (2).jpeg" alt="Imagen_gota_nacar">
-            <h3>Cruz Calatrava de plata 950</h3>
-            <p>S/. 200.00</p>
-          </div>
-          <div class="card" data-tipo="collar" data-precio="120">
-            <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.51 PM (3).jpeg" alt="Imagen_anillo_huairuro">
-            <h3>Cruz Templaria de plata 950</h3>
-            <p>S/. 120.00</p>
-          </div>
-          <div class="card" data-tipo="collar" data-precio="110">
-            <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.51 PM (4).jpeg" alt="Imagen_anillo_huairuro">
-            <h3>Cruz Visigoda de plata 950</h3>
-            <p>S/. 110.00</p>
-          </div>
-          <div class="card" data-tipo="collar" data-precio="120">
-            <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.52 PM (1).jpeg" alt="Imagen_anillo_nacar">
-            <h3>Cruz Calatrava</h3>
-            <p>S/. 120.00</p>
-          </div>
-          <div class="card" data-tipo="collar" data-precio="120">
-            <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.52 PM (2).jpeg" alt="Imagen_anillo_piedra_azul_brillante">
-            <h3>Charovsky Corazón</h3>
-            <p>S/. 120.00</p>
-          </div>
-          <div class="card" data-tipo="collar" data-precio="120">
-            <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.52 PM (3).jpeg" alt="Imagen_anillo_piedraDorada">
-            <h3>Corazón con Gravados</h3>
-            <p>S/. 120.00</p>
-          </div>
-          <div class="card" data-tipo="collar" data-precio="130">
-            <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.52 PM.jpeg" alt="Imagen_anillo_piedra_colores">
-            <h3>Cruz</h3>
-            <p>S/. 130.00</p>
-          </div>
-          <div class="card" data-tipo="collar" data-precio="110">
-            <img src="../img/Productos/collar_candado.jpeg" alt="Imagen_anillo_piedra_colores">
-            <h3>Candado de plata 925 con circones</h3>
-            <p>S/. 110.00</p>
-          </div>
-          <div class="card" data-tipo="collar" data-precio="110">
-            <img src="../img/Productos/collar_trescaidas_corazon1.jpeg" alt="Imagen_anillo_piedra_colores">
-            <h3>Corazón de plata 925 con circones</h3>
-            <p>S/. 110.00</p>
-          </div>
-          <div class="card" data-tipo="pulsera" data-precio="75">
-            <img src="../img/Productos/Mejorados/brazaletes/brazalete_marron.jpeg" alt="Imagen_anillo_arbol">
-            <h3>Brazalete de piedra ojo de tigre con adornos de plata 950</h3>
-            <p>S/. 75.00</p>
-          </div>
-          <div class="card" data-tipo="pulsera" data-precio="175">
-            <img src="../img/Productos/Mejorados/brazaletes/WhatsApp Image 2024-10-03 at 5.19.45 PM.jpeg" alt="Imagen_corazon_blanco">
-            <h3>Grande brazalete de piedras de ojo de tigre con adornos de plata 950</h3>
-            <p>S/. 175.00</p>
-          </div>
-          <div class="card" data-tipo="pulsera" data-precio="150">
-            <img src="../img/Productos/Mejorados/brazaletes/WhatsApp Image 2024-10-03 at 5.19.47 PM (3).jpeg" alt="Imagen_corazon_rojo">
-            <h3>Pulsera de plata 950 con diferentes tipos de piedras</h3>
-            <p>S/. 150.00</p>
-          </div>
-          <div class="card" data-tipo="pulsera" data-precio="150">
-            <img src="../img/Productos/Mejorados/brazaletes/WhatsApp Image 2024-10-03 at 5.19.47 PM (4).jpeg" alt="Imagen_gota_avalon">
-            <h3>Pulsera de plata 950 de huayruros</h3>
-            <p>S/. 150.00</p>
-          </div>
-          <div class="card" data-tipo="pulsera" data-precio="120">
-            <img src="../img/Productos/Mejorados/brazaletes/WhatsApp Image 2024-10-03 at 5.19.48 PM (1).jpeg" alt="Imagen_anillo_huairuro">
-            <h3>Pulsera de perlas del río</h3>
-            <p>S/. 120.00</p>
-          </div>
-          <div class="card" data-tipo="pulsera" data-precio="130">
-            <img src="../img/Productos/Mejorados/brazaletes/WhatsApp Image 2024-10-03 at 5.19.48 PM.jpeg" alt="Imagen_anillo_huairuro">
-            <h3>Brazalete de plata con piedra lapislázuli</h3>
-            <p>S/. 130.00</p>
-          </div>
-          <div class="card" data-tipo="pulsera" data-precio="75">
-            <img src="../img/Productos/Mejorados/brazaletes/WhatsApp Image 2024-10-03 at 5.19.51 PM.jpeg" alt="Imagen_anillo_nacar">
-            <h3>Pulsera delgada de ojo de tigre con adornos de plata 950</h3>
-            <p>S/. 75.00</p>
-          </div>
-          <div class="card" data-tipo="aretes" data-precio="80">
-            <img src="../img/Productos/Mejorados/Aretes/arete_corazon.jpeg" alt="arete_corazon">
-            <h3>Aretes de eslabones con corazones de plata 950</h3>
-            <p>S/. 80.00</p>
-          </div>
-          <div class="card" data-tipo="aretes" data-precio="65">
-            <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.42 PM.jpeg" alt="Imagen_corazon_rojo">
-            <h3>Aretes de plata 950 con turmalina</h3>
-            <p>S/. 65.00</p>
-          </div>
-          <div class="card" data-tipo="aretes" data-precio="80">
-            <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.43 PM (1).jpeg" alt="Imagen_gota_avalon">
-            <h3>Aretes de plata 950 con piedra onix</h3>
-            <p>S/. 80.00</p>
-          </div>
-          <div class="card" data-tipo="aretes" data-precio="80">
-            <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.43 PM (2).jpeg" alt="Imagen_gota_nacar">
-            <h3>Aretes de plata 950 con cuarzo blanco</h3>
-            <p>S/. 80.00</p>
-          </div>
-          <div class="card" data-tipo="aretes" data-precio="120">
-            <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.43 PM (3).jpeg" alt="Imagen_anillo_huairuro">
-            <h3>Aretes de plata 950 con lapislázuli</h3>
-            <p>S/. 120.00</p>
-          </div>
-          <div class="card" data-tipo="aretes" data-precio="75">
-            <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.43 PM (4).jpeg" alt="Imagen_anillo_huairuro">
-            <h3>Aretes de plata 950 con nacar</h3>
-            <p>S/. 75.00</p>
-          </div>
-          <div class="card" data-tipo="aretes" data-precio="80">
-            <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.43 PM.jpeg" alt="Imagen_anillo_nacar">
-            <h3>Aretes pegados de plata 950 con cuarzo rojo esculpido</h3>
-            <p>S/. 80.00</p>
-          </div>
-          <div class="card" data-tipo="aretes" data-precio="100">
-            <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.44 PM.jpeg" alt="Imagen_anillo_piedra_azul_brillante">
-            <h3>Aretes de plata 950 de Charovsky</h3>
-            <p>S/. 100.00</p>
-          </div>
-          <div class="card" data-tipo="aretes" data-precio="60">
-            <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.46 PM (1).jpeg" alt="Imagen_anillo_piedraDorada">
-            <h3>Aretes colgantes de plata 950</h3>
-            <p>S/. 60.00</p>
-          </div>
-          <div class="card" data-tipo="aretes" data-precio="70">
-            <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.46 PM (2).jpeg" alt="Imagen_anillo_piedra_colores">
-            <h3>Aretes colgantes de flor de plata 950</h3>
-            <p>S/. 70.00</p>
-          </div>
-          <div class="card" data-tipo="aretes" data-precio="45">
-            <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.46 PM (4).jpeg" alt="Imagen_anillo_piedra_colores">
-            <h3>Aretes colgantes de plata 950 con circones rojos de corazon</h3>
-            <p>S/. 45.00</p>
-          </div>
-          <div class="card" data-tipo="aretes" data-precio="75">
-            <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.46 PM.jpeg" alt="Imagen_anillo_piedra_colores">
-            <h3>Aretes colgantes circulares de plata 950</h3>
-            <p>S/. 75.00</p>
-          </div>
-          <div class="card" data-tipo="aretes" data-precio="45">
-            <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.47 PM (1).jpeg" alt="Imagen_anillo_piedra_colores">
-            <h3>Aretes colgantes de plata 950 con circones rosados de corazon</h3>
-            <p>S/. 45.00</p>
-          </div>
-          <div class="card" data-tipo="aretes" data-precio="45">
-            <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.47 PM (2).jpeg" alt="Imagen_anillo_piedra_colores">
-            <h3>Aretes colgantes de plata 950 con circones violetas de corazon</h3>
-            <p>S/. 45.00</p>
-          </div>
-          <div class="card" data-tipo="aretes" data-precio="75">
-            <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.49 PM (1).jpeg" alt="Imagen_anillo_piedra_colores">
-            <h3>Aretes colgantes de flor de plata 950 con circones rosas</h3>
-            <p>S/. 75.00</p>
-          </div>
-          <div class="card" data-tipo="aretes" data-precio="75">
-            <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.49 PM (2).jpeg" alt="Imagen_anillo_piedra_colores">
-            <h3>Aretes colgantes de flor de plata 950 con circones negros</h3>
-            <p>S/. 75.00</p>
-          </div>
-          <div class="card" data-tipo="aretes" data-precio="55">
-            <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.49 PM (3).jpeg" alt="Imagen_anillo_piedra_colores">
-            <h3>Aretes colgantes de flor pequeña de plata 950 con circones negros</h3>
-            <p>S/. 55.00</p>
-          </div>
-          <div class="card" data-tipo="aretes" data-precio="65">
-            <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.49 PM (4).jpeg" alt="Imagen_anillo_piedra_colores">
-            <h3>Aretes colgantes de rosa de plata 950 con circones morados</h3>
-            <p>S/. 65.00</p>
-          </div>
+      <div class="card" data-tipo="anillo" data-precio="60">
+        <img src="../img/Productos/Mejorados/Anillos/anillo_arbol.jpeg" alt="Imagen_anillo_arbol">
+        <h3>Anillo Árbol de la vida de plata quemada 950</h3>
+        <p>S/. 60.00</p>
+        <button class="add-to-cart" data-name="anillo" data-price="60">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="anillo" data-precio="110">
+        <img src="../img/Productos/Mejorados/Anillos/anillo_corazon_nacar.jpeg" alt="Imagen_corazon_nacar">
+        <h3>Anillo de plata 950 Corazón de Nacar</h3>
+        <p>S/. 110.00</p>
+        <button class="add-to-cart" data-name="anillo" data-price="110">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="anillo" data-precio="110">
+        <img src="../img/Productos/Mejorados/Anillos/anillo_corazon_rojo.jpeg" alt="Imagen_corazon_rojo">
+        <h3>Anillo de plata 950 Corazón Spondilus</h3>
+        <p>S/. 110.00</p>
+        <button class="add-to-cart" data-name="anillo" data-price="110" >Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="anillo" data-precio="110">
+        <img src="../img/Productos/Mejorados/Anillos/anillo_avalon.jpeg" alt="Imagen_gota_avalon">
+        <h3>Anillo de plata 950 Gota Avalón</h3>
+        <p>S/. 110.00</p>
+        <button class="add-to-cart" data-name="anillo" data-price="110">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="anillo" data-precio="110">
+        <img src="../img/Productos/Mejorados/Anillos/anillo_nacar.jpeg" alt="Imagen_gota_nacar">
+        <h3>Anillo de plata 950 Gota Nácar</h3>
+        <p>S/. 110.00</p>
+        <button class="add-to-cart" data-name="anillo" data-price="110">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="anillo" data-precio="80">
+        <img src="../img/Productos/Mejorados/Anillos/anillo_huairuro.jpeg" alt="Imagen_anillo_huairuro">
+        <h3>Anillo de plata 950 de Huayruro</h3>
+        <p>S/. 80.00</p>
+        <button class="add-to-cart" data-name="Anillo Huayruro" data-price="80">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="anillo" data-precio="45">
+        <img src="../img/Productos/Mejorados/Anillos/anillo_mariposa.jpeg" alt="Imagen_anillo_mariposa">
+        <h3>Anillo de plata 950 Mariposa</h3>
+        <p>S/. 45.00</p>
+        <button class="add-to-cart" data-name="Anillo Mariposa" data-price="45">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="anillo" data-precio="90">
+        <img src="../img/Productos/Mejorados/Anillos/anillo_piedras_nacar.jpeg" alt="Imagen_anillo_piedras_nacar">
+        <h3>Anillo de plata 950 con Nácar</h3>
+        <p>S/. 90.00</p>
+        <button class="add-to-cart" data-name="Anillo con Nácar" data-price="90">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="anillo" data-precio="90">
+        <img src="../img/Productos/Mejorados/Anillos/anillo_piedra_azul_brillante.jpeg" alt="Imagen_anillo_azul">
+        <h3>Anillo de plata 950 Aventurina Azul</h3>
+        <p>S/. 90.00</p>
+        <button class="add-to-cart" data-name="Anillo Aventurina Azul" data-price="90">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="anillo" data-precio="90">
+        <img src="../img/Productos/Mejorados/Anillos/anillo_piedra_dorada.jpeg" alt="Imagen_anillo_dorada">
+        <h3>Anillo de plata 950 Aventurina Dorada</h3>
+        <p>S/. 90.00</p>
+        <button class="add-to-cart" data-name="Anillo Aventurina Dorada" data-price="90">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="anillo" data-precio="90">
+        <img src="../img/Productos/Mejorados/Anillos/anillo_piedras_colores.jpeg" alt="Imagen_anillo_piedras_colores">
+        <h3>Anillo de plata 950 con piedras naturales</h3>
+        <p>S/. 90.00</p>
+        <button class="add-to-cart" data-name="Anillo con piedras naturales" data-price="90">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="80">
+        <img src="../img/Productos/Mejorados/Aretes/arete_corazon.jpeg" alt="arete_corazon">
+        <h3>Aretes de eslabones con corazones de plata 950</h3>
+        <p>S/. 80.00</p>
+        <button class="add-to-cart" data-name="Aretes de eslabones con corazones de plata 950" data-price="80.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="65">
+        <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.42 PM.jpeg" alt="Imagen_corazon_rojo">
+        <h3>Aretes de plata 950 con turmalina</h3>
+        <p>S/. 65.00</p>
+        <button class="add-to-cart" data-name="Aretes de plata 950 con turmalina" data-price="65.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="80">
+        <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.43 PM (1).jpeg" alt="Imagen_gota_avalon">
+        <h3>Aretes de plata 950 con piedra onix</h3>
+        <p>S/. 80.00</p>
+        <button class="add-to-cart" data-name="Aretes de plata 950 con piedra ónix" data-price="80.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="80">
+        <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.43 PM (2).jpeg" alt="Imagen_gota_nacar">
+        <h3>Aretes de plata 950 con cuarzo blanco</h3>
+        <p>S/. 80.00</p>
+        <button class="add-to-cart" data-name="Aretes de plata 950 con cuarzo blanco" data-price="80.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="120">
+        <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.43 PM (3).jpeg" alt="Imagen_anillo_huairuro">
+        <h3>Aretes de plata 950 con lapislázuli</h3>
+        <p>S/. 120.00</p>
+        <button class="add-to-cart" data-name="Aretes de plata 950 con lapislázuli" data-price="120.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="75">
+        <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.43 PM (4).jpeg" alt="Imagen_anillo_huairuro">
+        <h3>Aretes de plata 950 con nacar</h3>
+        <p>S/. 75.00</p>
+        <button class="add-to-cart" data-name="Aretes de plata 950 con nacar" data-price="75.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="80">
+        <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.43 PM.jpeg" alt="Imagen_anillo_nacar">
+        <h3>Aretes pegados de plata 950 con cuarzo rojo esculpido</h3>
+        <p>S/. 80.00</p>
+        <button class="add-to-cart" data-name="Aretes pegados de plata 950 con cuarzo rojo esculpido" data-price="80.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="100">
+        <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.44 PM.jpeg" alt="Imagen_anillo_piedra_azul_brillante">
+        <h3>Aretes de plata 950 de Charovsky</h3>
+        <p>S/. 100.00</p>
+        <button class="add-to-cart" data-name="Aretes de plata 950 de Charovsky" data-price="100.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="60">
+        <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.46 PM (1).jpeg" alt="Imagen_anillo_piedraDorada">
+        <h3>Aretes colgantes de plata 950</h3>
+        <p>S/. 60.00</p>
+        <button class="add-to-cart" data-name="Aretes colgantes de plata 950" data-price="60.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="70">
+        <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.46 PM (2).jpeg" alt="Imagen_anillo_piedra_colores">
+        <h3>Aretes colgantes de flor de plata 950</h3>
+        <p>S/. 70.00</p>
+        <button class="add-to-cart" data-name="Aretes colgantes de flor de plata 950" data-price="70.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="45">
+        <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.46 PM (4).jpeg" alt="Imagen_anillo_piedra_colores">
+        <h3>Aretes colgantes de plata 950 con circones rojos de corazon</h3>
+        <p>S/. 45.00</p>
+        <button class="add-to-cart" data-name="Aretes colgantes de plata 950 con circones rojos de corazón" data-price="45.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="75">
+        <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.46 PM.jpeg" alt="Imagen_anillo_piedra_colores">
+        <h3>Aretes colgantes circulares de plata 950</h3>
+        <p>S/. 75.00</p>
+        <button class="add-to-cart" data-name="Aretes colgantes circulares de plata 950" data-price="75.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="45">
+        <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.47 PM (1).jpeg" alt="Imagen_anillo_piedra_colores">
+        <h3>Aretes colgantes de plata 950 con circones rosados de corazon</h3>
+        <p>S/. 45.00</p>
+        <button class="add-to-cart" data-name="Aretes colgantes de plata 950 con circones rosados de corazón" data-price="45.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="45">
+        <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.47 PM (2).jpeg" alt="Imagen_anillo_piedra_colores">
+        <h3>Aretes colgantes de plata 950 con circones violetas de corazon</h3>
+        <p>S/. 45.00</p>
+        <button class="add-to-cart" data-name="Aretes colgantes de plata 950 con circones violetas de corazón" data-price="45.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="75">
+        <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.49 PM (1).jpeg" alt="Imagen_anillo_piedra_colores">
+        <h3>Aretes colgantes de flor de plata 950 con circones rosas</h3>
+        <p>S/. 75.00</p>
+        <button class="add-to-cart" data-name="Aretes colgantes de flor de plata 950 con circones rosas" data-price="75.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="75">
+        <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.49 PM (2).jpeg" alt="Imagen_anillo_piedra_colores">
+        <h3>Aretes colgantes de flor de plata 950 con circones negros</h3>
+        <p>S/. 75.00</p>
+        <button class="add-to-cart" data-name="Aretes colgantes de flor de plata 950 con circones negros" data-price="75.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="55">
+        <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.49 PM (3).jpeg" alt="Imagen_anillo_piedra_colores">
+        <h3>Aretes colgantes de flor pequeña de plata 950 con circones negros</h3>
+        <p>S/. 55.00</p>
+        <button class="add-to-cart" data-name="Aretes colgantes de flor pequeña de plata 950 con circones negros" data-price="55.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="65">
+        <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.49 PM (4).jpeg" alt="Imagen_anillo_piedra_colores">
+        <h3>Aretes colgantes de rosa de plata 950 con circones morados</h3>
+        <p>S/. 65.00</p>
+        <button class="add-to-cart" data-name="Aretes colgantes de rosa de plata 950 con circones morados" data-price="65.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="80">
+        <img src="../img/Productos/Mejorados/Aretes/aretes canarios.jpg" alt="Imagen_aretes_canarios">
+        <h3>Aretes colgantes en forma de canario de plata 950</h3>
+        <p>S/. 80.00</p>
+        <button class="add-to-cart" data-name="Aretes colgantes de rosa de plata 950 con circones morados" data-price="65.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="80">
+        <img src="../img/Productos/Mejorados/Aretes/aretes loritos.jpg" alt="Imagen_aretes_canarios">
+        <h3>Aretes colgantes en forma de loros verdes de plata 950</h3>
+        <p>S/. 80.00</p>
+        <button class="add-to-cart" data-name="Aretes colgantes de rosa de plata 950 con circones morados" data-price="65.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="120">
+        <img src="../img/Productos/Mejorados/Aretes/aretes peces.jpg" alt="Imagen_aretes_canarios">
+        <h3>Aretes en forma de peces con trabajo en filigrana de plata 950 y circones verdes incrustados</h3>
+        <p>S/. 120.00</p>
+        <button class="add-to-cart" data-name="Aretes colgantes de rosa de plata 950 con circones morados" data-price="65.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="105">
+        <img src="../img/Productos/Mejorados/Aretes/peces aretes.jpg" alt="Imagen_aretes_canarios">
+        <h3>Aretes en forma de peces con trabajo en filigrana de plata 950 y circones naranjas incrustados</h3>
+        <p>S/. 105.00</p>
+        <button class="add-to-cart" data-name="Aretes colgantes de rosa de plata 950 con circones morados" data-price="65.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="120">
+        <img src="../img/Productos/Mejorados/Aretes/aretes hojas.jpeg" alt="Imagen_aretes_canarios">
+        <h3>Aretes en forma de hoja con trabajo en filigrana de plata 950</h3>
+        <p>S/. 120.00</p>
+        <button class="add-to-cart" data-name="Aretes colgantes de rosa de plata 950 con circones morados" data-price="65.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="aretes" data-precio="95">
+        <img src="../img/Productos/Mejorados/Aretes/aretesPalomas.jpg" alt="Imagen_aretes_canarios">
+        <h3>Aretes colgados en fomrma de palomas de plata 950</h3>
+        <p>S/. 95.00</p>
+        <button class="add-to-cart" data-name="Aretes colgantes de rosa de plata 950 con circones morados" data-price="65.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="pulsera" data-precio="75">
+        <img src="../img/Productos/Mejorados/brazaletes/brazalete_marron.jpeg" alt="Imagen_anillo_arbol">
+        <h3>Brazalete de piedra ojo de tigre con adornos de plata 950</h3>
+        <p>S/. 75.00</p>
+        <button class="add-to-cart" data-name="Brazalete de piedra ojo de tigre con adornos de plata 950" data-price="75.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="pulsera" data-precio="175">
+        <img src="../img/Productos/Mejorados/brazaletes/WhatsApp Image 2024-10-03 at 5.19.45 PM.jpeg" alt="Imagen_corazon_blanco">
+        <h3>Grande brazalete de piedras de ojo de tigre con adornos de plata 950</h3>
+        <p>S/. 175.00</p>
+        <button class="add-to-cart" data-name="Grande brazalete de piedras de ojo de tigre con adornos de plata 950" data-price="175.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="pulsera" data-precio="150">
+        <img src="../img/Productos/Mejorados/brazaletes/WhatsApp Image 2024-10-03 at 5.19.47 PM (3).jpeg" alt="Imagen_corazon_rojo">
+        <h3>Pulsera de plata 950 con diferentes tipos de piedras</h3>
+        <p>S/. 150.00</p>
+        <button class="add-to-cart" data-name="Pulsera de plata 950 con diferentes tipos de piedras" data-price="150.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="pulsera" data-precio="150">
+        <img src="../img/Productos/Mejorados/brazaletes/WhatsApp Image 2024-10-03 at 5.19.47 PM (4).jpeg" alt="Imagen_gota_avalon">
+        <h3>Pulsera de plata 950 de huayruros</h3>
+        <p>S/. 150.00</p>
+        <button class="add-to-cart" data-name="Pulsera de plata 950 de huayruros" data-price="150.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="pulsera" data-precio="120">
+        <img src="../img/Productos/Mejorados/brazaletes/WhatsApp Image 2024-10-03 at 5.19.48 PM (1).jpeg" alt="Imagen_anillo_huairuro">
+        <h3>Pulsera de perlas del río</h3>
+        <p>S/. 120.00</p>
+        <button class="add-to-cart" data-name="Pulsera de perlas del río" data-price="120.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="pulsera" data-precio="130">
+        <img src="../img/Productos/Mejorados/brazaletes/WhatsApp Image 2024-10-03 at 5.19.48 PM.jpeg" alt="Imagen_anillo_huairuro">
+        <h3>Brazalete de plata con piedra lapislázuli</h3>
+        <p>S/. 130.00</p>
+        <button class="add-to-cart" data-name="Brazalete de plata con piedra lapislázuli" data-price="130.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="pulsera" data-precio="75">
+        <img src="../img/Productos/Mejorados/brazaletes/WhatsApp Image 2024-10-03 at 5.19.51 PM.jpeg" alt="Imagen_anillo_nacar">
+        <h3>Pulsera delgada de ojo de tigre con adornos de plata 950</h3>
+        <p>S/. 75.00</p>
+        <button class="add-to-cart" data-name="Pulsera delgada de ojo de tigre con adornos de plata 950" data-price="75.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="collar" data-precio="160">
+        <img src="../img/Productos/Mejorados/Collares/collar_corazon.jpeg" alt="Imagen_collar_corazon">
+        <h3>Relicario Corazón de Plata 950</h3>
+        <p>S/. 160.00</p>
+        <button class="add-to-cart" data-name="Relicario Corazón de Plata 950" data-price="160.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="collar" data-precio="150">
+        <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.50 PM (2).jpeg" alt="Imagen_corazon_rojo">
+        <h3>Flor de Nacar de plata quemada 950</h3>
+        <p>S/. 150.00</p>
+        <button class="add-to-cart" data-name="Flor de Nacar de plata quemada 950" data-price="150.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="collar" data-precio="140">
+        <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.51 PM (1).jpeg" alt="Imagen_gota_avalon">
+        <h3>Cruz con Manto de plata 950</h3>
+        <p>S/. 140.00</p>
+        <button class="add-to-cart" data-name="Cruz con Manto de plata 950" data-price="140.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="collar" data-precio="200">
+        <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.51 PM (2).jpeg" alt="Imagen_gota_nacar">
+        <h3>Cruz Calatrava de plata 950</h3>
+        <p>S/. 200.00</p>
+        <button class="add-to-cart" data-name="Cruz Calatrava de plata 950" data-price="200.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="collar" data-precio="120">
+        <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.51 PM (3).jpeg" alt="Imagen_anillo_huairuro">
+        <h3>Cruz Templaria de plata 950</h3>
+        <p>S/. 120.00</p>
+        <button class="add-to-cart" data-name="Cruz Templaria de plata 950" data-price="120.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="collar" data-precio="110">
+        <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.51 PM (4).jpeg" alt="Imagen_anillo_huairuro">
+        <h3>Cruz Visigoda de plata 950</h3>
+        <p>S/. 110.00</p>
+        <button class="add-to-cart" data-name="Cruz Visigoda de plata 950" data-price="110.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="collar" data-precio="120">
+        <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.52 PM (1).jpeg" alt="Imagen_anillo_nacar">
+        <h3>Cruz Calatrava</h3>
+        <p>S/. 120.00</p>
+        <button class="add-to-cart" data-name="Cruz Calatrava" data-price="120.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="collar" data-precio="120">
+        <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.52 PM (2).jpeg" alt="Imagen_anillo_piedra_azul_brillante">
+        <h3>Charovsky Corazón</h3>
+        <p>S/. 120.00</p>
+        <button class="add-to-cart" data-name="Charovsky Corazón" data-price="120.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="collar" data-precio="120">
+        <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.52 PM (3).jpeg" alt="Imagen_anillo_piedraDorada">
+        <h3>Corazón con Gravados</h3>
+        <p>S/. 120.00</p>
+        <button class="add-to-cart" data-name="Corazón con Gravados" data-price="120.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="collar" data-precio="130">
+        <img src="../img/Productos/Mejorados/Collares/WhatsApp Image 2024-10-03 at 5.19.52 PM.jpeg" alt="Imagen_anillo_piedra_colores">
+        <h3>Cruz</h3>
+        <p>S/. 130.00</p>
+        <button class="add-to-cart" data-name="Cruz" data-price="130.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="collar" data-precio="110">
+        <img src="../img/Productos/collar_candado.jpeg" alt="Imagen_anillo_piedra_colores">
+        <h3>Candado de plata 925 con circones</h3>
+        <p>S/. 110.00</p>
+        <button class="add-to-cart" data-name="Candado de plata 925 con circones" data-price="110.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="collar" data-precio="110">
+        <img src="../img/Productos/collar_trescaidas_corazon1.jpeg" alt="Imagen_anillo_piedra_colores">
+        <h3>Corazón de plata 925 con circones</h3>
+        <p>S/. 110.00</p>
+        <button class="add-to-cart" data-name="Corazón de plata 925 con circones" data-price="110.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="collar" data-precio="100">
+        <img src="../img/Productos/Mejorados/collares/collarPalomas.jpg" alt="Imagen_anillo_piedra_colores">
+        <h3>Collar palomas corazon plata 950 con piedra charovsky negra</h3>
+        <p>S/. 100.00</p>
+        <button class="add-to-cart" data-name="Corazón de plata 925 con circones" data-price="110.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="collar" data-precio="100">
+        <img src="../img/Productos/Mejorados/collares/collarFlor.jpg" alt="Imagen_anillo_piedra_colores">
+        <h3>Collar de flor de plata 950 con piedra charovsky rosa</h3>
+        <p>S/. 100.00</p>
+        <button class="add-to-cart" data-name="Corazón de plata 925 con circones" data-price="110.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="collar" data-precio="180">
+        <img src="../img/Productos/Mejorados/collares/juegoPalomas.jpg" alt="Imagen_anillo_piedra_colores">
+        <h3>Juego de Palomas de plata 950 inlcluye collar y aretes con piedra charovsky</h3>
+        <p>S/. 180.00</p>
+        <button class="add-to-cart" data-name="Corazón de plata 925 con circones" data-price="110.00">Agregar al carrito</button>
+      </div>
+      <div class="card" data-tipo="collar" data-precio="250">
+        <img src="../img/Productos/Mejorados/collares/juego de turquesa.jpg" alt="juego de turquesa">
+        <h3>Juego de Turquesas con trabajo en filigrana de plata 950</h3>
+        <p>S/. 250.00</p>
+        <button class="add-to-cart" data-name="Corazón de plata 925 con circones" data-price="110.00">Agregar al carrito</button>
+      </div>
       </section>
       <script src="../html/JavaScript/filtros.js" type="text/javascript"></script>
       <!--Tercer avance-->

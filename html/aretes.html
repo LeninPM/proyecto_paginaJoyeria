@@ -76,26 +76,33 @@
       </svg>
     </button>    
 
-    <button class="button" data-action="cart">
+    <button class="button" data-action="cart" id="cart-button">
       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" stroke-linejoin="round" stroke-linecap="round"
-        viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
+           viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
         <circle r="1" cy="21" cx="9"></circle>
         <circle r="1" cy="21" cx="20"></circle>
         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
       </svg>
     </button>
+    
+    <div class="cart-section" id="cart-section">
+      <ul class="cart-list" id="cart-items"></ul>
+      <div class="cart-total" id="cart-total"></div>
+      <button class="close-cart" id="close-cart">Cerrar</button>
+      <button class="buy-button" id="buy-button" disabled>Comprar</button>
+    </div>
   </div>
 
   <div class="filtros">
-    <label for="tipo" class="filtro-label">Tipo seguro:</label>
-    <select id="seguro" class="tipo-opciones" onclick="filtrarProductosTipoAretes()">
+    <label for="tipo" class="filtro-label filtro-long">Tipo seguro:</label>
+    <select id="seguro" class="tipo-opciones filtro-long" onclick="filtrarProductosTipoAretes()">
         <option value="todos">Todos</option>
         <option value="ganchillo">Ganchillo</option>
         <option value="cabezal">Con cabezal</option>
     </select>
 
-    <label for="tipo" class="filtro-label">Tipo longitud:</label>
-    <select id="longitud" class="tipo-opciones" onclick="filtrarProductosTipoAretes()">
+    <label for="tipo" class="filtro-label filtro-long">Tipo longitud:</label>
+    <select id="longitud" class="tipo-opciones filtro-long" onclick="filtrarProductosTipoAretes()">
         <option value="todos">Todos</option>
         <option value="largos">Largos</option>
         <option value="cortos">Cortos</option>
@@ -111,101 +118,155 @@
         <option value="ninguno">Ninguno</option>
     </select>
 
-    <label for="tipo" class="filtro-label">Precio:</label>
+    <label for="tipo" class="filtro-label">Precio: S/.</label>
     <input type="range" id="price-range" min="0" max="200" value="200" step="10" oninput="actualizarPrecio()">
         <span id="price-label">0 - 200</span>
 </div>
   
   <section class="galeria">
-    <div class="card" data-seguro ="ganchillo" data-long ="largos" data-piedras="ninguno" data-precio="80">
+    <div class="card" data-name="Aretes de eslabones con corazones de plata 950" data-seguro="ganchillo" data-long="largos" data-piedras="ninguno" data-precio="80">
       <img src="../img/Productos/Mejorados/Aretes/arete_corazon.jpeg" alt="arete_corazon">
       <h3>Aretes de eslabones con corazones de plata 950</h3>
       <p>S/. 80.00</p>
+      <button class="add-to-cart" data-name="Aretes de eslabones con corazones de plata 950" data-price="80.00">Agregar al carrito</button>
     </div>
-    <div class="card" data-seguro ="cabezal" data-long ="largos" data-piedras="piedra-natural" data-precio="65">
+    <div class="card" data-seguro="cabezal" data-long="largos" data-piedras="piedra-natural" data-precio="65">
       <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.42 PM.jpeg" alt="Imagen_corazon_rojo">
       <h3>Aretes de plata 950 con turmalina</h3>
       <p>S/. 65.00</p>
+      <button class="add-to-cart" data-name="Aretes de plata 950 con turmalina" data-price="65.00">Agregar al carrito</button>
     </div>
-    <div class="card" data-seguro ="cabezal" data-long ="cortos" data-piedras="piedra-natural" data-precio="80">
+    <div class="card" data-seguro="cabezal" data-long="cortos" data-piedras="piedra-natural" data-precio="80">
       <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.43 PM (1).jpeg" alt="Imagen_gota_avalon">
       <h3>Aretes de plata 950 con piedra onix</h3>
       <p>S/. 80.00</p>
+      <button class="add-to-cart" data-name="Aretes de plata 950 con piedra ónix" data-price="80.00">Agregar al carrito</button>
     </div>
-    <div class="card" data-seguro ="cabezal" data-long ="cortos" data-piedras="piedra-natural" data-precio="80">
+    <div class="card" data-seguro="cabezal" data-long="cortos" data-piedras="piedra-natural" data-precio="80">
       <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.43 PM (2).jpeg" alt="Imagen_gota_nacar">
       <h3>Aretes de plata 950 con cuarzo blanco</h3>
       <p>S/. 80.00</p>
+      <button class="add-to-cart" data-name="Aretes de plata 950 con cuarzo blanco" data-price="80.00">Agregar al carrito</button>
     </div>
-    <div class="card" data-seguro ="cabezal" data-long ="cortos" data-piedras="piedra-natural" data-precio="120">
+    <div class="card" data-seguro="cabezal" data-long="cortos" data-piedras="piedra-natural" data-precio="120">
       <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.43 PM (3).jpeg" alt="Imagen_anillo_huairuro">
       <h3>Aretes de plata 950 con lapislázuli</h3>
       <p>S/. 120.00</p>
+      <button class="add-to-cart" data-name="Aretes de plata 950 con lapislázuli" data-price="120.00">Agregar al carrito</button>
     </div>
-    <div class="card" data-seguro ="ganchillo" data-long ="largos" data-piedras="piedra-natural" data-precio="75">
+    <div class="card" data-seguro="ganchillo" data-long="largos" data-piedras="piedra-natural" data-precio="75">
       <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.43 PM (4).jpeg" alt="Imagen_anillo_huairuro">
       <h3>Aretes de plata 950 con nacar</h3>
       <p>S/. 75.00</p>
+      <button class="add-to-cart" data-name="Aretes de plata 950 con nacar" data-price="75.00">Agregar al carrito</button>
     </div>
-    <div class="card" data-seguro ="cabezal" data-long ="cortos" data-piedras="piedra-natural" data-precio="80">
+    <div class="card" data-seguro="cabezal" data-long="cortos" data-piedras="piedra-natural" data-precio="80">
       <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.43 PM.jpeg" alt="Imagen_anillo_nacar">
       <h3>Aretes pegados de plata 950 con cuarzo rojo esculpido</h3>
       <p>S/. 80.00</p>
+      <button class="add-to-cart" data-name="Aretes pegados de plata 950 con cuarzo rojo esculpido" data-price="80.00">Agregar al carrito</button>
     </div>
-    <div class="card" data-seguro ="cabezal" data-long ="cortos" data-piedras="sharovsky" data-precio="100">
+    <div class="card" data-seguro="cabezal" data-long="cortos" data-piedras="sharovsky" data-precio="100">
       <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.44 PM.jpeg" alt="Imagen_anillo_piedra_azul_brillante">
       <h3>Aretes de plata 950 de Charovsky</h3>
       <p>S/. 100.00</p>
+      <button class="add-to-cart" data-name="Aretes de plata 950 de Charovsky" data-price="100.00">Agregar al carrito</button>
     </div>
-    <div class="card" data-seguro ="ganchillo" data-long ="largos" data-piedras="ninguno" data-precio="60">
+    <div class="card" data-seguro="ganchillo" data-long="largos" data-piedras="ninguno" data-precio="60">
       <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.46 PM (1).jpeg" alt="Imagen_anillo_piedraDorada">
       <h3>Aretes colgantes de plata 950</h3>
       <p>S/. 60.00</p>
+      <button class="add-to-cart" data-name="Aretes colgantes de plata 950" data-price="60.00">Agregar al carrito</button>
     </div>
-    <div class="card" data-seguro ="ganchillo" data-long ="largos" data-piedras="ninguno" data-precio="70">
+    <div class="card" data-seguro="ganchillo" data-long="largos" data-piedras="ninguno" data-precio="70">
       <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.46 PM (2).jpeg" alt="Imagen_anillo_piedra_colores">
       <h3>Aretes colgantes de flor de plata 950</h3>
       <p>S/. 70.00</p>
+      <button class="add-to-cart" data-name="Aretes colgantes de flor de plata 950" data-price="70.00">Agregar al carrito</button>
     </div>
-    <div class="card" data-seguro ="ganchillo" data-long ="cortos" data-piedras="circon" data-precio="45">
+    <div class="card" data-seguro="ganchillo" data-long="cortos" data-piedras="circon" data-precio="45">
       <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.46 PM (4).jpeg" alt="Imagen_anillo_piedra_colores">
       <h3>Aretes colgantes de plata 950 con circones rojos de corazon</h3>
       <p>S/. 45.00</p>
+      <button class="add-to-cart" data-name="Aretes colgantes de plata 950 con circones rojos de corazón" data-price="45.00">Agregar al carrito</button>
     </div>
-    <div class="card" data-seguro ="ganchillo" data-long ="largos" data-piedras="ninguno" data-precio="75">
+    <div class="card" data-seguro="ganchillo" data-long="largos" data-piedras="ninguno" data-precio="75">
       <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.46 PM.jpeg" alt="Imagen_anillo_piedra_colores">
       <h3>Aretes colgantes circulares de plata 950</h3>
       <p>S/. 75.00</p>
+      <button class="add-to-cart" data-name="Aretes colgantes circulares de plata 950" data-price="75.00">Agregar al carrito</button>
     </div>
-    <div class="card" data-seguro ="ganchillo" data-long ="cortos" data-piedras="circon" data-precio="45">
+    <div class="card" data-seguro="ganchillo" data-long="cortos" data-piedras="circon" data-precio="45">
       <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.47 PM (1).jpeg" alt="Imagen_anillo_piedra_colores">
       <h3>Aretes colgantes de plata 950 con circones rosados de corazon</h3>
       <p>S/. 45.00</p>
+      <button class="add-to-cart" data-name="Aretes colgantes de plata 950 con circones rosados de corazón" data-price="45.00">Agregar al carrito</button>
     </div>
-    <div class="card" data-seguro ="ganchillo" data-long ="cortos" data-piedras="circon" data-precio="45">
+    <div class="card" data-seguro="ganchillo" data-long="cortos" data-piedras="circon" data-precio="45">
       <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.47 PM (2).jpeg" alt="Imagen_anillo_piedra_colores">
       <h3>Aretes colgantes de plata 950 con circones violetas de corazon</h3>
       <p>S/. 45.00</p>
+      <button class="add-to-cart" data-name="Aretes colgantes de plata 950 con circones violetas de corazón" data-price="45.00">Agregar al carrito</button>
     </div>
-    <div class="card" data-seguro ="ganchillo" data-long ="cortos" data-piedras="circon" data-precio="75">
+    <div class="card" data-seguro="ganchillo" data-long="cortos" data-piedras="circon" data-precio="75">
       <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.49 PM (1).jpeg" alt="Imagen_anillo_piedra_colores">
       <h3>Aretes colgantes de flor de plata 950 con circones rosas</h3>
       <p>S/. 75.00</p>
+      <button class="add-to-cart" data-name="Aretes colgantes de flor de plata 950 con circones rosas" data-price="75.00">Agregar al carrito</button>
     </div>
-    <div class="card" data-seguro ="ganchillo" data-long ="cortos" data-piedras="circon" data-precio="75">
+    <div class="card" data-seguro="ganchillo" data-long="cortos" data-piedras="circon" data-precio="75">
       <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.49 PM (2).jpeg" alt="Imagen_anillo_piedra_colores">
       <h3>Aretes colgantes de flor de plata 950 con circones negros</h3>
       <p>S/. 75.00</p>
+      <button class="add-to-cart" data-name="Aretes colgantes de flor de plata 950 con circones negros" data-price="75.00">Agregar al carrito</button>
     </div>
-    <div class="card" data-seguro ="ganchillo" data-long ="cortos" data-piedras="circon" data-precio="55">
+    <div class="card" data-seguro="ganchillo" data-long="cortos" data-piedras="circon" data-precio="55">
       <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.49 PM (3).jpeg" alt="Imagen_anillo_piedra_colores">
       <h3>Aretes colgantes de flor pequeña de plata 950 con circones negros</h3>
       <p>S/. 55.00</p>
+      <button class="add-to-cart" data-name="Aretes colgantes de flor pequeña de plata 950 con circones negros" data-price="55.00">Agregar al carrito</button>
     </div>
-    <div class="card" data-seguro ="ganchillo" data-long ="cortos" data-piedras="circon" data-precio="65">
+    <div class="card" data-seguro="ganchillo" data-long="cortos" data-piedras="circon" data-precio="65">
       <img src="../img/Productos/Mejorados/Aretes/WhatsApp Image 2024-10-03 at 5.19.49 PM (4).jpeg" alt="Imagen_anillo_piedra_colores">
       <h3>Aretes colgantes de rosa de plata 950 con circones morados</h3>
       <p>S/. 65.00</p>
+      <button class="add-to-cart" data-name="Aretes colgantes de rosa de plata 950 con circones morados" data-price="65.00">Agregar al carrito</button>
+    </div>
+    <div class="card" data-seguro="ganchillo" data-long="largos" data-piedras="ninguno" data-precio="80">
+      <img src="../img/Productos/Mejorados/Aretes/aretes canarios.jpg" alt="Imagen_aretes_canarios">
+      <h3>Aretes colgantes en forma de canario de plata 950</h3>
+      <p>S/. 80.00</p>
+      <button class="add-to-cart" data-name="Aretes colgantes de rosa de plata 950 con circones morados" data-price="65.00">Agregar al carrito</button>
+    </div>
+    <div class="card" data-seguro="ganchillo" data-long="largos" data-piedras="ninguno" data-precio="80">
+      <img src="../img/Productos/Mejorados/Aretes/aretes loritos.jpg" alt="Imagen_aretes_canarios">
+      <h3>Aretes colgantes en forma de loros verdes de plata 950</h3>
+      <p>S/. 80.00</p>
+      <button class="add-to-cart" data-name="Aretes colgantes de rosa de plata 950 con circones morados" data-price="65.00">Agregar al carrito</button>
+    </div>
+    <div class="card" data-seguro="cabezal" data-long="largos" data-piedras="circon" data-precio="120">
+      <img src="../img/Productos/Mejorados/Aretes/aretes peces.jpg" alt="Imagen_aretes_canarios">
+      <h3>Aretes en forma de peces con trabajo en filigrana de plata 950 y circones verdes incrustados</h3>
+      <p>S/. 120.00</p>
+      <button class="add-to-cart" data-name="Aretes colgantes de rosa de plata 950 con circones morados" data-price="65.00">Agregar al carrito</button>
+    </div>
+    <div class="card" data-seguro="cabezal" data-long="pegados" data-piedras="circon" data-precio="105">
+      <img src="../img/Productos/Mejorados/Aretes/peces aretes.jpg" alt="Imagen_aretes_canarios">
+      <h3>Aretes en forma de peces con trabajo en filigrana de plata 950 y circones naranjas incrustados</h3>
+      <p>S/. 105.00</p>
+      <button class="add-to-cart" data-name="Aretes colgantes de rosa de plata 950 con circones morados" data-price="65.00">Agregar al carrito</button>
+    </div>
+    <div class="card" data-seguro="ganchillo" data-long="largos" data-piedras="circon" data-precio="120">
+      <img src="../img/Productos/Mejorados/Aretes/aretes hojas.jpeg" alt="Imagen_aretes_canarios">
+      <h3>Aretes en forma de hoja con trabajo en filigrana de plata 950</h3>
+      <p>S/. 120.00</p>
+      <button class="add-to-cart" data-name="Aretes colgantes de rosa de plata 950 con circones morados" data-price="65.00">Agregar al carrito</button>
+    </div>
+    <div class="card" data-seguro="cabezal" data-long="pegados" data-piedras="ninguno" data-precio="95">
+      <img src="../img/Productos/Mejorados/Aretes/aretesPalomas.jpg" alt="Imagen_aretes_canarios">
+      <h3>Aretes colgados en fomrma de palomas de plata 950</h3>
+      <p>S/. 95.00</p>
+      <button class="add-to-cart" data-name="Aretes colgantes de rosa de plata 950 con circones morados" data-price="65.00">Agregar al carrito</button>
     </div>
   </section>
     <script src="../html/JavaScript/filtros.js" type="text/javascript"></script>

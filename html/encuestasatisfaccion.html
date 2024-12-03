@@ -14,215 +14,252 @@
   <link rel="stylesheet" type="text/css" href="../css/tendencias.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../css/coleccion.css">
   <script src="../html/JavaScript/index.js" defer></script>
   <link rel="stylesheet" type="text/css" href="../css/encuestaSatisfaccion.css">
-  
+
 </head>
 
 <body>
-    <header>
-      <nav class="container">
-        <div class="logo"> <img src="../img/logos/logo_dorado.png" alt="Logo" width="150px" height="auto"></div>
-        <!--**********************************Modificado Avance 3-->
-        <button class="menu-lineal" aria-label="Toggle navigation" onclick="toggleMenu()">
-          ☰
-        </button>
-        <!--Modificado Avance 3***********************************-->
-        <ul class="nav-links">
-          <li><a href="../html/index.html" class="nav-enlace">Inicio</a></li>
-          <li><a href="../html/tendencias.html" class="nav-enlace">Tendencia <i class="fa-solid fa-fire"></i></a></li>
-          <li class="dropdown">
-            <a href="../html/productos.html" class="nav-enlace">Productos</a>
-            <div class="dropdown-content">
-              <a href="../html/collares.html">Collares</a>
-              <a href="../html/anillos.html">Anillos</a>
-              <a href="../html/aretes.html">Aretes</a>
-              <a href="../html/brazaletes.html">Brazaletes</a>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  
-  
-  
-    <div class="button-container">
-      <button class="button" data-action="goHome">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024" stroke-width="0"
-          fill="currentColor" stroke="currentColor" class="icon">
-          <path
-            d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.9 63.9 0 0 0-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0 0 18.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z">
-          </path>
-        </svg>
+  <header>
+    <nav class="container">
+      <div class="logo"> <img src="../img/logos/logo_dorado.png" alt="Logo" width="150px" height="auto"></div>
+      <!--**********************************Modificado Avance 3-->
+      <button class="menu-lineal" aria-label="Toggle navigation" onclick="toggleMenu()">
+        ☰
       </button>
-  
-      <button class="button" data-action="search">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" aria-hidden="true" viewBox="0 0 24 24"
-          stroke-width="2" fill="none" stroke="currentColor" class="icon">
-          <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linejoin="round" stroke-linecap="round"></path>
-        </svg>
-      </button>
-      <div id="search-container"></div>
-  
-      <button class="button" data-action="profile">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="0"
-          fill="currentColor" stroke="currentColor" class="icon">
-          <path
-            d="M12 2.5a5.5 5.5 0 0 1 3.096 10.047 9.005 9.005 0 0 1 5.9 8.181.75.75 0 1 1-1.499.044 7.5 7.5 0 0 0-14.993 0 .75.75 0 0 1-1.5-.045 9.005 9.005 0 0 1 5.9-8.18A5.5 5.5 0 0 1 12 2.5ZM8 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0Z">
-          </path>
-        </svg>
-      </button>    
-  
-      <button class="button" data-action="cart">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" stroke-linejoin="round" stroke-linecap="round"
-          viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
-          <circle r="1" cy="21" cx="9"></circle>
-          <circle r="1" cy="21" cx="20"></circle>
-          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-        </svg>
-      </button>
+      <!--Modificado Avance 3***********************************-->
+      <ul class="nav-links">
+        <li><a href="../html/index.html" class="nav-enlace">Inicio</a></li>
+        <li><a href="../html/tendencias.html" class="nav-enlace">Tendencia <i class="fa-solid fa-fire"></i></a></li>
+        <li class="dropdown">
+          <a href="../html/productos.html" class="nav-enlace">Productos</a>
+          <div class="dropdown-content">
+            <a href="../html/collares.html">Collares</a>
+            <a href="../html/anillos.html">Anillos</a>
+            <a href="../html/aretes.html">Aretes</a>
+            <a href="../html/brazaletes.html">Brazaletes</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+  <div class="button-container">
+    <button class="button" data-action="goHome">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024" stroke-width="0"
+        fill="currentColor" stroke="currentColor" class="icon">
+        <path
+          d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.9 63.9 0 0 0-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0 0 18.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z">
+        </path>
+      </svg>
+    </button>
+
+    <button class="button" data-action="search">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" aria-hidden="true" viewBox="0 0 24 24"
+        stroke-width="2" fill="none" stroke="currentColor" class="icon">
+        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linejoin="round" stroke-linecap="round"></path>
+      </svg>
+    </button>
+    <div id="search-container"></div>
+
+    <button class="button" data-action="profile">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="0"
+        fill="currentColor" stroke="currentColor" class="icon">
+        <path
+          d="M12 2.5a5.5 5.5 0 0 1 3.096 10.047 9.005 9.005 0 0 1 5.9 8.181.75.75 0 1 1-1.499.044 7.5 7.5 0 0 0-14.993 0 .75.75 0 0 1-1.5-.045 9.005 9.005 0 0 1 5.9-8.18A5.5 5.5 0 0 1 12 2.5ZM8 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0Z">
+        </path>
+      </svg>
+    </button>
+
+    <button class="button" data-action="cart" id="cart-button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" stroke-linejoin="round" stroke-linecap="round"
+        viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
+        <circle r="1" cy="21" cx="9"></circle>
+        <circle r="1" cy="21" cx="20"></circle>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+      </svg>
+    </button>
+
+    <div class="cart-section" id="cart-section">
+      <ul class="cart-list" id="cart-items"></ul>
+      <div class="cart-total" id="cart-total"></div>
+      <button class="close-cart" id="close-cart">Cerrar</button>
+      <button class="buy-button" id="buy-button" disabled>Comprar</button>
     </div>
+  </div>
 
-    <br>
-    <section id="FormPostVenta">
-        <div class="postventa">
-            <h1 class="titulo">Encuesta de Satisfacción</h1>
-            <p class="descripcción">¡Gracias por tu compra! Nos gustaría conocer tu experiencia con nosotros.</p>
-            <p class="descripcción">Por favor, sírvase a completar el siguiente formulario para ayudarnos a mejorar
-                nuestro servicio.</p>
-            <br>
-            <form action="#">
+  <br>
+  <section id="FormPostVenta">
+    <div class="postventa">
+      <h1 class="titulo">Encuesta de Satisfacción</h1>
+      <p class="descripcción">¡Gracias por tu compra! Nos gustaría conocer tu experiencia con nosotros.</p>
+      <p class="descripcción">Por favor, sírvase a completar el siguiente formulario para ayudarnos a mejorar
+        nuestro servicio.</p>
+      <br>
+      <form action="#">
 
-                <div class="form-group">
-                    <label for="p1">P1. ¿Qué tan satisfecho está con la sección de "Tendencias" de nuestro sitio web</label>
-                </div>
-                <div>
-                    <span id="p1"><input type="radio" name="p1" class="p1_radio">Muy insatisfecho</span>
-                    <span id="p1"><input type="radio" name="p1" class="p1_radio">Insatisfecho</span>
-                    <span id="p1"><input type="radio" name="p1" class="p1_radio">Indiferente</span>
-                    <span id="p1"><input type="radio" name="p1" class="p1_radio">Poco Satisfecho</span>
-                    <span id="p1"><input type="radio" name="p1" class="p1_radio">Muy Satisfecho</span>
-                </div>
-
-                <div class="form-group">
-                    <label for="p2">P2. ¿Qué tan satisfecho está con la sección de "Productos" de nuestro sitio web</label>
-                </div>
-                <div>
-                    <span id="p2"><input type="radio" name="p2" class="p2_radio">Muy insatisfecho</span>
-                    <span id="p2"><input type="radio" name="p2" class="p2_radio">Insatisfecho</span>
-                    <span id="p2"><input type="radio" name="p2" class="p2_radio">Indiferente</span>
-                    <span id="p2"><input type="radio" name="p2" class="p2_radio">Poco Satisfecho</span>
-                    <span id="p2"><input type="radio" name="p2" class="p2_radio">Muy Satisfecho</span>
-                </div>
-
-                <div class="form-group">
-                    <label for="p3">P3. ¿Qué tan satisfecho se encuentra con el diseño de nuestro sitio web en general?</label>
-                </div>
-                <div>
-                    <span id="p3"><input type="radio" name="p3" class="p3_radio">Muy insatisfecho</span>
-                    <span id="p3"><input type="radio" name="p3" class="p3_radio">Insatisfecho</span>
-                    <span id="P3"><input type="radio" name="p3" class="p3_radio">Indiferente</span>
-                    <span id="p3"><input type="radio" name="p3" class="p3_radio">Poco Satisfecho</span>
-                    <span id="p3"><input type="radio" name="p3" class="p3_radio">Muy Satisfecho</span>
-                </div>
-
-                <div class="form-group">
-                    <label for="p4">P4. ¿Presentó algún incoveniente en la creación de su cuenta para nuestro sitio web?</label>
-                </div>
-                <div>
-                    <span id="p4"><input type="radio" name="p4" class="p4_radio">Sí</span>
-                    <span id="p4"><input type="radio" name="p4" class="p4_radio">No</span>
-                </div>
-
-                <div class="form-group">
-                    <label for="p5">P5. ¿Presentó algún incoveniente en el proceso de comnpra o con el pago?</label>
-                </div>
-                <div>
-                    <span id="p5"><input type="radio" name="p5" class="p5_radio">Sí</span>
-                    <span id="p5"><input type="radio" name="p5" class="p5_radio">No</span>
-                </div>
-
-                <div class="form-group">
-                    <label for="p6">P6. ¿Recomendaría nuestro sitio web?</label>
-                </div>
-                <div>
-                    <span id="p6"><input type="radio" name="p6" class="p6_radio">Sí</span>
-                    <span id="p6"><input type="radio" name="p6" class="p6_radio">No</span>
-                    <span id="p6"><input type="radio" name="p6" class="p6_radio">Tal vez</span>
-                </div>
-
-                <div class="form-group">
-                    <label for="p7">P7. ¿Qué secciones le gustó más? (Puede escoger más de 1)</label>
-                </div>
-                <div>
-                    <span id="p7"><input type="checkbox" name="p7" class="p7_checkbox1">Inicio</span>
-                    <span id="p7"><input type="checkbox" name="p7" class="p7_checkbox2">Tendencias</span>
-                    <span id="p7"><input type="checkbox" name="p7" class="p7_checkbox3">Productos</span>
-                    <span id="p7"><input type="checkbox" name="p7" class="p7_checkbox4">Nosotros</span>
-                    <span id="p7"><input type="checkbox" name="p7" class="p7_checkbox5">Contáctenos</span>
-                    <span id="p7"><input type="checkbox" name="p7" class="p7_checkbox6">Ubícanos</span>
-                </div>
-
-                <div class="form-group">
-                    <label for="p8">P8. ¿Qué producto le resulta más llamativo? (Puede escoger más de 1)</label>
-                </div>
-                <div>
-                    <span id="p8"><input type="checkbox" name="p8" class="p8_checkbox1">Collares</span>
-                    <span id="p8"><input type="checkbox" name="p8" class="p8_checkbox2">Anillos</span>
-                    <span id="p8"><input type="checkbox" name="p8" class="p8_checkbox3">Aretes</span>
-                    <span id="p8"><input type="checkbox" name="p8" class="p8_checkbox4">brazaletes</span>
-                </div>
-
-                <div class="form-message">
-                    <label for="message">¿Algún comentario o sugerencia?</label>
-                    <textarea id="message" type="text" placeholder="Ingrese aquí su comentario o sugerencia"></textarea>
-                </div>
-
-                <div class="button">
-                    <input type="submit" value="Enviar">
-                
-                </div>
-
-                <div class="button">
-                    <input type="reset" value="Limpíar">
-                </div>
-
-            </form>
+        <div class="form-group">
+          <label for="p1">P1. ¿Qué tan satisfecho está con la sección de "Tendencias" de nuestro sitio web</label>
         </div>
-    </section>
-    <br>
-    <footer>
-        <div class="container">
-          <div class="footer-content">
-            <div class="footer-section">
-              <h3>Joyeria Peeter</h3>
-              <img src="../img/Productos/logopeeterblanco.jpeg" alt="Logo Footer" width="30%"></p>
-            </div>
-            <div class="footer-section">
-              <h3>Información</h3>
-              <ul>
-                <li><a href="nosotros.html">Sobre Nosotros</a></li>
-                <li><a href="contacto.html">Contactanos</a></li>
-                <li><a href="ubicanos.html">Nuestro Taller</a></li>
-              </ul>
-            </div>
-            <div class="footer-section">
-              <h3>Conecta con Nosotros</h3>
-              <div class="social-icons">
-                <a href="https://www.facebook.com/profile.php?id=61557974456023" target="_blank" aria-label="Facebook"><i
-                    class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.instagram.com/plateriapeeter/" target="_blank" aria-label="Instagram"><i
-                    class="fa-brands fa-instagram"></i></a>
-                <a href="https://web.whatsapp.com/" target="_blank" aria-label="Whatsapp"><i
-                    class="fa-brands fa-whatsapp"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="footer-bottom">
-            <p>&copy; 2024 Joyeria Peeter. Todos los derechos reservados.</p>
+        <div>
+          <span id="p1"><input type="radio" name="p1" class="p1_radio">Muy insatisfecho</span>
+          <span id="p1"><input type="radio" name="p1" class="p1_radio">Insatisfecho</span>
+          <span id="p1"><input type="radio" name="p1" class="p1_radio">Indiferente</span>
+          <span id="p1"><input type="radio" name="p1" class="p1_radio">Poco Satisfecho</span>
+          <span id="p1"><input type="radio" name="p1" class="p1_radio">Muy Satisfecho</span>
+        </div>
+
+        <div class="form-group">
+          <label for="p2">P2. ¿Qué tan satisfecho está con la sección de "Productos" de nuestro sitio web</label>
+        </div>
+        <div>
+          <span id="p2"><input type="radio" name="p2" class="p2_radio">Muy insatisfecho</span>
+          <span id="p2"><input type="radio" name="p2" class="p2_radio">Insatisfecho</span>
+          <span id="p2"><input type="radio" name="p2" class="p2_radio">Indiferente</span>
+          <span id="p2"><input type="radio" name="p2" class="p2_radio">Poco Satisfecho</span>
+          <span id="p2"><input type="radio" name="p2" class="p2_radio">Muy Satisfecho</span>
+        </div>
+
+        <div class="form-group">
+          <label for="p3">P3. ¿Qué tan satisfecho se encuentra con el diseño de nuestro sitio web en general?</label>
+        </div>
+        <div>
+          <span id="p3"><input type="radio" name="p3" class="p3_radio">Muy insatisfecho</span>
+          <span id="p3"><input type="radio" name="p3" class="p3_radio">Insatisfecho</span>
+          <span id="P3"><input type="radio" name="p3" class="p3_radio">Indiferente</span>
+          <span id="p3"><input type="radio" name="p3" class="p3_radio">Poco Satisfecho</span>
+          <span id="p3"><input type="radio" name="p3" class="p3_radio">Muy Satisfecho</span>
+        </div>
+
+        <div class="form-group">
+          <label for="p4">P4. ¿Presentó algún incoveniente en la creación de su cuenta para nuestro sitio web?</label>
+        </div>
+        <div>
+          <span id="p4"><input type="radio" name="p4" class="p4_radio">Sí</span>
+          <span id="p4"><input type="radio" name="p4" class="p4_radio">No</span>
+        </div>
+
+        <div class="form-group">
+          <label for="p5">P5. ¿Presentó algún incoveniente en el proceso de comnpra o con el pago?</label>
+        </div>
+        <div>
+          <span id="p5"><input type="radio" name="p5" class="p5_radio">Sí</span>
+          <span id="p5"><input type="radio" name="p5" class="p5_radio">No</span>
+        </div>
+
+        <div class="form-group">
+          <label for="p6">P6. ¿Recomendaría nuestro sitio web?</label>
+        </div>
+        <div>
+          <span id="p6"><input type="radio" name="p6" class="p6_radio">Sí</span>
+          <span id="p6"><input type="radio" name="p6" class="p6_radio">No</span>
+          <span id="p6"><input type="radio" name="p6" class="p6_radio">Tal vez</span>
+        </div>
+
+        <div class="form-group">
+          <label for="p7">P7. ¿Qué secciones le gustó más? (Puede escoger más de 1)</label>
+        </div>
+        <div>
+          <span id="p7"><input type="checkbox" name="p7" class="p7_checkbox1">Inicio</span>
+          <span id="p7"><input type="checkbox" name="p7" class="p7_checkbox2">Tendencias</span>
+          <span id="p7"><input type="checkbox" name="p7" class="p7_checkbox3">Productos</span>
+          <span id="p7"><input type="checkbox" name="p7" class="p7_checkbox4">Nosotros</span>
+          <span id="p7"><input type="checkbox" name="p7" class="p7_checkbox5">Contáctenos</span>
+          <span id="p7"><input type="checkbox" name="p7" class="p7_checkbox6">Ubícanos</span>
+        </div>
+
+        <div class="form-group">
+          <label for="p8">P8. ¿Qué producto le resulta más llamativo? (Puede escoger más de 1)</label>
+        </div>
+        <div>
+          <span id="p8"><input type="checkbox" name="p8" class="p8_checkbox1">Collares</span>
+          <span id="p8"><input type="checkbox" name="p8" class="p8_checkbox2">Anillos</span>
+          <span id="p8"><input type="checkbox" name="p8" class="p8_checkbox3">Aretes</span>
+          <span id="p8"><input type="checkbox" name="p8" class="p8_checkbox4">brazaletes</span>
+        </div>
+
+        <div class="form-message">
+          <label for="message">¿Algún comentario o sugerencia?</label>
+          <textarea id="message" type="text" placeholder="Ingrese aquí su comentario o sugerencia"></textarea>
+        </div>
+
+        <div class="button">
+          <input type="submit" value="Enviar">
+
+        </div>
+
+        <div class="button">
+          <input type="reset" value="Limpíar">
+        </div>
+
+      </form>
+    </div>
+  </section>
+  <br>
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Joyeria Peeter</h3>
+          <img src="../img/Productos/logopeeterblanco.jpeg" alt="Logo Footer" width="30%"></p>
+        </div>
+        <div class="footer-section">
+          <h3>Información</h3>
+          <ul>
+            <li><a href="nosotros.html">Sobre Nosotros</a></li>
+            <li><a href="contacto.html">Contactanos</a></li>
+            <li><a href="ubicanos.html">Nuestro Taller</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Conecta con Nosotros</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61557974456023" target="_blank" aria-label="Facebook"><i
+                class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/plateriapeeter/" target="_blank" aria-label="Instagram"><i
+                class="fa-brands fa-instagram"></i></a>
+            <a href="https://web.whatsapp.com/" target="_blank" aria-label="Whatsapp"><i
+                class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
-      </footer>
-</body>  
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Joyeria Peeter. Todos los derechos reservados.</p>
+      </div>
+    </div>
+    
+  </footer>
+  <script>// Función para alternar la clase 'active' en el menú al hacer clic
+    function toggleMenu() {
+      const navLinks = document.querySelector(".nav-links");
+      const header = document.querySelector("header");
+      navLinks.classList.toggle("active"); // Alterna la visibilidad del menú
+
+      // Controla la altura del header dependiendo del estado del menú
+      if (navLinks.classList.contains("active")) {
+        header.classList.add("expanded"); // Aumenta la altura del header si el menú está activo
+      } else {
+        header.classList.remove("expanded"); // Restaura la altura original del header si el menú está oculto
+      }
+    }
+
+    // Función para redirigir al inicio al hacer clic en el logo
+    function goToHome() {
+      window.location.href = "index.html"; // Cambia "index.html" por la ruta de tu página de inicio si es diferente
+    }
+
+    // Añadir evento de clic al logo
+    document.addEventListener("DOMContentLoaded", () => {
+      const logo = document.querySelector(".logo img"); // Selecciona la imagen del logo
+      if (logo) {
+        logo.addEventListener("click", goToHome); // Asocia la función al evento de clic
+      }
+    });
+
+  </script>
+</body>

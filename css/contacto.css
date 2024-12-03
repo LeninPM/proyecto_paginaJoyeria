@@ -286,4 +286,20 @@ label {
 
 }
 /* Modificado avance 3--*********************************************************/
-
+@media (max-width:480px){
+  .conteiner{
+    width: auto;
+  }
+  .form{
+    padding: 5px;
+    width: 100%;
+  }
+  .info{
+    display: none;
+  }
+  .submit{
+    width: 50%;
+    font-size: 14px;
+    align-self: center;
+  }
+}

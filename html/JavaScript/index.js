@@ -17,10 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
           case 'profile':
             window.location.href = 'registarse.html';
             break;
-
-            case 'cart':
-              window.location.href = 'encuestaSatisfaccion.html';
-              break;
   
           default:
             console.log('Acción no definida');
@@ -66,53 +62,103 @@ document.addEventListener('DOMContentLoaded', () => {
   
   
   /* Carrito */
+
+
   
-  document.addEventListener("DOMContentLoaded", () => {
-    const cartButton = document.querySelector("[data-action='cart']");
-    const cartContainer = document.createElement("div");
-    cartContainer.id = "cart-container";
-    cartContainer.innerHTML = `
-      <h3>Carrito de Compras</h3>
-      <ul id="cart-items"></ul>
-      <p>Total: $<span id="cart-total">0.00</span></p>
-    `;
-    cartContainer.classList.add("cart-hidden");
-    document.body.appendChild(cartContainer);
-  
-    const cartItems = [];
-    let total = 0;
-  
-  
-    cartButton.addEventListener("click", () => {
-      cartContainer.classList.toggle("cart-hidden");
-    });
-  
-  
-    const addToCart = (productName, price) => {
-      cartItems.push({ name: productName, price: price });
-      total += price;
-  
-  
-      const cartList = document.getElementById("cart-items");
-      const cartItem = document.createElement("li");
-      cartItem.textContent = `${productName} - $${price.toFixed(2)}`;
-      cartList.appendChild(cartItem);
-  
-      // Actualizar total
-      document.getElementById("cart-total").textContent = total.toFixed(2);
-    };
-  
-  
-    const productButtons = document.querySelectorAll(".add-to-cart");
-    productButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const productName = button.getAttribute("data-name");
-        const price = parseFloat(button.getAttribute("data-price"));
-        addToCart(productName, price);
-      });
-    });
+// Array para almacenar productos en el carrito
+const cart = [];
+
+// Maneja el clic en los botones "Agregar al carrito"
+document.querySelectorAll('.add-to-cart').forEach(button => {
+  button.addEventListener('click', function() {
+    const productName = this.getAttribute('data-name');
+    const productPrice = parseFloat(this.getAttribute('data-price'));
+
+    // Agrega el producto al carrito
+    cart.push({ name: productName, price: productPrice });
+
+    // Muestra el carrito y actualiza su contenido
+    updateCart();
   });
-  
+});
+
+// Función para actualizar la visualización del carrito
+function updateCart() {
+  const cartSection = document.getElementById('cart-section');
+  const cartItems = document.getElementById('cart-items');
+  const cartTotal = document.getElementById('cart-total');
+  const buyButton = document.getElementById('buy-button'); // Botón de comprar
+
+  // Limpia la lista de elementos del carrito
+  cartItems.innerHTML = '';
+
+  // Agrega cada producto al carrito visualmente con su precio y un botón de eliminación
+  cart.forEach((item, index) => {
+    const listItem = document.createElement('li');
+    listItem.textContent = `${item.name} - S/. ${item.price.toFixed(2)}`;
+
+    // Botón de eliminación
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'Eliminar';
+    removeButton.classList.add('remove-item');
+    removeButton.addEventListener('click', function() {
+      removeItem(index);
+    });
+
+    listItem.appendChild(removeButton);
+    cartItems.appendChild(listItem);
+  });
+
+  // Calcula el total de la compra y lo muestra en soles
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+  cartTotal.textContent = `Total: S/. ${total.toFixed(2)}`;
+
+  // Habilita o deshabilita el botón "Comprar" dependiendo del estado del carrito
+  buyButton.disabled = cart.length === 0;
+
+  // Muestra la sección del carrito
+  cartSection.classList.add('active');
+}
+
+// Función para eliminar un producto del carrito
+function removeItem(index) {
+  cart.splice(index, 1); // Elimina el producto del array
+  updateCart(); // Actualiza la visualización del carrito
+}
+
+// Manejador para el botón de cerrar el carrito
+document.getElementById('close-cart').addEventListener('click', function() {
+  const cartSection = document.getElementById('cart-section');
+  cartSection.classList.remove('active');
+});
+
+// Manejador para mostrar/ocultar la sección del carrito
+document.getElementById('cart-button').addEventListener('click', function() {
+  const cartSection = document.getElementById('cart-section');
+  cartSection.classList.toggle('active');
+});
+
+// Manejador para el botón de "Comprar"
+document.getElementById('buy-button').addEventListener('click', function() {
+  if (cart.length > 0) {
+    alert('¡Gracias por tu compra! Procesaremos tu pedido.');
+    // Aquí puedes agregar la lógica para redirigir a una página de pago o completar la compra
+    cart.length = 0; // Vacía el carrito
+    updateCart(); // Actualiza la visualización del carrito
+  }
+});
+
+// Manejador para el botón "Comprar"
+document.getElementById('buy-button').addEventListener('click', function() {
+  // Muestra un cuadro de confirmación
+  const confirmPurchase = window.confirm('¿Estás seguro de que quieres realizar la compra?');
+
+  if (confirmPurchase) {
+    // Redirige a la página de encuesta si se acepta la compra
+    window.location.href = 'encuestaSatisfaccion.html';
+  }
+});
+
   /* login */
   document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('.form-register');

@@ -69,19 +69,26 @@
       </svg>
     </button>    
 
-    <button class="button" data-action="cart">
+    <button class="button" data-action="cart" id="cart-button">
       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" stroke-linejoin="round" stroke-linecap="round"
-        viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
+           viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
         <circle r="1" cy="21" cx="9"></circle>
         <circle r="1" cy="21" cx="20"></circle>
         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
       </svg>
     </button>
+    
+    <div class="cart-section" id="cart-section">
+      <ul class="cart-list" id="cart-items"></ul>
+      <div class="cart-total" id="cart-total"></div>
+      <button class="close-cart" id="close-cart">Cerrar</button>
+      <button class="buy-button" id="buy-button" disabled>Comprar</button>
+    </div>
   </div>
 
   <right>
     <div class="conteiner">
-      <from class=" form">
+      <form class=" form">
         <h2>Escríbenos</h2>
         <p>
           Puedes llenar los siguientes datos
@@ -94,9 +101,9 @@
 
         <label from="nombre">Escribe su mensaje</label>
         <textarea class="box" id="mensaje" cols="30" rows="10"></textarea>
-        <input type="submit" value="enviar" class="submit">
+        <input type="submit" value="Enviar" class="submit">
 
-      </from>
+      </form>
       <div class="info">
         <img src="../img/Tienda/ti.jpeg" class="img-1" alt="">
         <div class="location">

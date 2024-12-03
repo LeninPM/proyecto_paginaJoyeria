@@ -76,14 +76,21 @@
       </svg>
     </button>    
 
-    <button class="button" data-action="cart">
+    <button class="button" data-action="cart" id="cart-button">
       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" stroke-linejoin="round" stroke-linecap="round"
-        viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
+           viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
         <circle r="1" cy="21" cx="9"></circle>
         <circle r="1" cy="21" cx="20"></circle>
         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
       </svg>
     </button>
+    
+    <div class="cart-section" id="cart-section">
+      <ul class="cart-list" id="cart-items"></ul>
+      <div class="cart-total" id="cart-total"></div>
+      <button class="close-cart" id="close-cart">Cerrar</button>
+      <button class="buy-button" id="buy-button" disabled>Comprar</button>
+    </div>
   </div>
 
   <div class="filtros">
@@ -102,60 +109,71 @@
 </div>
 
 <section class="galeria">
-  <div class="card" data-tipo="plata-quemada" data-precio="60">
+  <div class="card" data-name="Anillo Árbol de la vida" data-precio="60">
     <img src="../img/Productos/Mejorados/Anillos/anillo_arbol.jpeg" alt="Imagen_anillo_arbol">
     <h3>Anillo Árbol de la vida de plata quemada 950</h3>
     <p>S/. 60.00</p>
+    <button class="add-to-cart" data-name="Anillo Árbol de la vida de plata quemada 950" data-price="60">Agregar al carrito</button>
   </div>
-  <div class="card" data-tipo="piedra-natural" data-precio="110">
-    <img src="../img/Productos/Mejorados/Anillos/anillo_corazon_nacar.jpeg" alt="Imagen_corazon_blanco">
-    <h3>Anillo >Anillo de plata 950 Corazón de Nacar</h3>
+  <div class="card" data-name="Anillo Corazón de Nácar" data-precio="110">
+    <img src="../img/Productos/Mejorados/Anillos/anillo_corazon_nacar.jpeg" alt="Imagen_corazon_nacar">
+    <h3>Anillo de plata 950 Corazón de Nacar</h3>
     <p>S/. 110.00</p>
+    <button class="add-to-cart" data-name="Anillo Corazón de Nácar" data-price="110">Agregar al carrito</button>
   </div>
-  <div class="card" data-tipo="piedra-natural" data-precio="110">
+  <div class="card" data-name="Anillo Corazón Spondilus" data-precio="110">
     <img src="../img/Productos/Mejorados/Anillos/anillo_corazon_rojo.jpeg" alt="Imagen_corazon_rojo">
     <h3>Anillo de plata 950 Corazón Spondilus</h3>
     <p>S/. 110.00</p>
+    <button class="add-to-cart" data-name="Anillo Corazón Spondilus" data-price="110" >Agregar al carrito</button>
   </div>
-  <div class="card" data-tipo="piedra-natural" data-precio="110">
+  <div class="card" data-name="Anillo Gota Avalón" data-precio="110">
     <img src="../img/Productos/Mejorados/Anillos/anillo_avalon.jpeg" alt="Imagen_gota_avalon">
     <h3>Anillo de plata 950 Gota Avalón</h3>
     <p>S/. 110.00</p>
+    <button class="add-to-cart" data-name="Anillo Gota Avalón" data-price="110">Agregar al carrito</button>
   </div>
-  <div class="card" data-tipo="piedra-natural" data-precio="110">
+  <div class="card" data-name="Anillo Gota Nácar" data-precio="110">
     <img src="../img/Productos/Mejorados/Anillos/anillo_nacar.jpeg" alt="Imagen_gota_nacar">
-    <h3>Anillo de plata 950 Gota Avalón</h3>
+    <h3>Anillo de plata 950 Gota Nácar</h3>
     <p>S/. 110.00</p>
+    <button class="add-to-cart" data-name="Anillo Gota Nácar" data-price="110">Agregar al carrito</button>
   </div>
-  <div class="card" data-tipo="piedra-natural" data-precio="80">
+  <div class="card" data-name="Anillo Huayruro" data-precio="80">
     <img src="../img/Productos/Mejorados/Anillos/anillo_huairuro.jpeg" alt="Imagen_anillo_huairuro">
     <h3>Anillo de plata 950 de Huayruro</h3>
     <p>S/. 80.00</p>
+    <button class="add-to-cart" data-name="Anillo Huayruro" data-price="80">Agregar al carrito</button>
   </div>
-  <div class="card" data-tipo="plata" data-precio="45">
-    <img src="../img/Productos/Mejorados/Anillos/anillo_mariposa.jpeg" alt="Imagen_anillo_huairuro">
+  <div class="card" data-name="Anillo Mariposa" data-precio="45">
+    <img src="../img/Productos/Mejorados/Anillos/anillo_mariposa.jpeg" alt="Imagen_anillo_mariposa">
     <h3>Anillo de plata 950 Mariposa</h3>
     <p>S/. 45.00</p>
+    <button class="add-to-cart" data-name="Anillo Mariposa" data-price="45">Agregar al carrito</button>
   </div>
-  <div class="card" data-tipo="piedra-natural" data-precio="90">
-    <img src="../img/Productos/Mejorados/Anillos/anillo_piedras_nacar.jpeg" alt="Imagen_anillo_nacar">
-    <h3>Anillo de plata 950 con Nacar</h3>
+  <div class="card" data-name="Anillo con Nácar" data-precio="90">
+    <img src="../img/Productos/Mejorados/Anillos/anillo_piedras_nacar.jpeg" alt="Imagen_anillo_piedras_nacar">
+    <h3>Anillo de plata 950 con Nácar</h3>
     <p>S/. 90.00</p>
+    <button class="add-to-cart" data-name="Anillo con Nácar" data-price="90">Agregar al carrito</button>
   </div>
-  <div class="card" data-tipo="piedra-natural" data-precio="90">
-    <img src="../img/Productos/Mejorados/Anillos/anillo_piedra_azul_brillante.jpeg" alt="Imagen_anillo_piedra_azul_brillante">
+  <div class="card" data-name="Anillo Aventurina Azul" data-precio="90">
+    <img src="../img/Productos/Mejorados/Anillos/anillo_piedra_azul_brillante.jpeg" alt="Imagen_anillo_azul">
     <h3>Anillo de plata 950 Aventurina Azul</h3>
     <p>S/. 90.00</p>
+    <button class="add-to-cart" data-name="Anillo Aventurina Azul" data-price="90">Agregar al carrito</button>
   </div>
-  <div class="card" data-tipo="piedra-natural" data-precio="90">
-    <img src="../img/Productos/Mejorados/Anillos/anillo_piedra_dorada.jpeg" alt="Imagen_anillo_piedraDorada">
+  <div class="card" data-name="Anillo Aventurina Dorada" data-precio="90">
+    <img src="../img/Productos/Mejorados/Anillos/anillo_piedra_dorada.jpeg" alt="Imagen_anillo_dorada">
     <h3>Anillo de plata 950 Aventurina Dorada</h3>
     <p>S/. 90.00</p>
+    <button class="add-to-cart" data-name="Anillo Aventurina Dorada" data-price="90">Agregar al carrito</button>
   </div>
-  <div class="card" data-tipo="piedra-natural" data-precio="90">
-    <img src="../img/Productos/Mejorados/Anillos/anillo_piedras_colores.jpeg" alt="Imagen_anillo_piedra_colores">
+  <div class="card" data-name="Anillo con piedras naturales" data-precio="90">
+    <img src="../img/Productos/Mejorados/Anillos/anillo_piedras_colores.jpeg" alt="Imagen_anillo_piedras_colores">
     <h3>Anillo de plata 950 con piedras naturales</h3>
     <p>S/. 90.00</p>
+    <button class="add-to-cart" data-name="Anillo con piedras naturales" data-price="90">Agregar al carrito</button>
   </div>
 </section>
 
