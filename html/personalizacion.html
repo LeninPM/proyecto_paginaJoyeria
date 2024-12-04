@@ -103,23 +103,20 @@
             </div>
             <div class="caracteristicas">
                 <label for="" class="formulario_label">Material</label> 
-                <input type="text" class="formulario_input" placeholder="oro,plata,platino,etc">
+                <input id="material" type="text" class="formulario_input" placeholder="oro,plata,platino,etc">
                 <label for="" class="formulario_label">Tamaño o medidas</label> 
-                <input type="text" class="formulario_input" placeholder="Tamaño">
-                <label for="" class="formulario_label">Grabado Personalizado</label><br>
-                <input type="radio" name="Grabado" value="Si" checked="">si <br>
-                <input type="radio" name="Grabado" value="No">No <br>
+                <input id="tamano"type="text" class="formulario_input" placeholder="Tamaño">
+                <label  for="" class="formulario_label">Grabado Personalizado</label><br>
+                <input id="grabadoSi"type="radio" name="Grabado" value="Si" checked="">si <br>
+                <input id="grabadoNo"type="radio" name="Grabado" value="No">No <br>
                 <label for="" class="formulario_label">Piedras Preciosas</label>
-                <input type="text" class="formulario_input" placeholder="Diamante,Rubí,Zarifo,etc"><br>
+                <input id="piedras"type="text" class="formulario_input" placeholder="Diamante,Rubí,Zarifo,etc"><br>
                 <label for="" class="formulario_label">Nombre</label>
-                <input type="text" class="formulario_input" placeholder="nombre completo"><br>
+                <input id="nombre"type="text" class="formulario_input" placeholder="nombre completo"><br>
                 <label for="" class="formulario_label">Fecha de entrega Deseada</label>
-                <input type="date" name="Fecha"><br> <br>
+                <input id="fechaEntrega"type="date" name="Fecha"><br> <br>
                 <input type="submit" value="Enviar" class="formulario_submit">
                 <input type="reset" value="Cancelar" class="formulario_submit">
-
-                
-
 
             </div>
 
@@ -157,7 +154,7 @@
       }
     });
     </script>
-  <script src="../html/JavaScript/persona.js" defer></script>
+  <script src="Persona.js"></script>
 
     <footer>
       <div class="container">
